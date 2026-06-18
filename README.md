@@ -41,7 +41,7 @@ AI-driven investment platform prototype focusing on web automation and intellige
 ---
 
 ## Contact Me
-- **Portfolio:** [zain-imran-resume.vercel.app](https://zain-imran-resume.vercel.app)  
+- **Portfolio:** [Zain-Imran](https://www.zain-imran.com/)  
 - **Email:** mirzazan3334@gmail.com 
 - **LinkedIn:** [linkedin.com/in/zain-imran](https://www.linkedin.com/in/zain-imran-792545320/)  
 
