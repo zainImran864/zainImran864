@@ -1,0 +1,29 @@
+name: Sync README Assets
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/assets.yml"
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download assets
+        run: |
+          mkdir -p assets
+          curl -L -o assets/wave.gif "https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif"
+          curl -L -o assets/coding.gif "https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif"
+
+      - name: Commit assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/
+          git diff --staged --quiet || git commit -m "chore: refresh README assets"
+          git push
