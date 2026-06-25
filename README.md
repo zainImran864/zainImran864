@@ -1,6 +1,6 @@
 <h1 align="center">
   Hi, I'm Zain Imran
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Waving%20Hand.png" width="35" alt="waving hand" />
+  <img src="https://raw.githubusercontent.com/zainImran864/zainImran864/main/assets/wave.gif" width="35" alt="waving hand" />
 </h1>
 
 <p align="center">
@@ -17,6 +17,9 @@
 </p>
 
 ---
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zainImran864/zainImran864/main/assets/coding.gif" width="280" alt="coding" />
+</p>
 
 ### About Me
 
