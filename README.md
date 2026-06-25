@@ -22,7 +22,7 @@
 
 I'm a **Junior Software Engineer at Cybersilo**, currently building **CTEM (Continuous Threat Exposure Management)** — a platform that helps organizations continuously monitor their attack surface and stay compliant with frameworks like **CIS, PCI DSS, and CMMC**.
 
-Previously I shipped **ThreatHawk**, a SIEM product, as part of the MERN team. Outside of enterprise work I've delivered freelance products including **TrustBridge** (investor × entrepreneur collaboration platform), the **Gujrat Fans** e-commerce site, and a full-featured **Event Planner** web app.
+Outside of enterprise work I've delivered freelance products including **TrustBridge** (investor × entrepreneur collaboration platform), the **Gujrat Fans** e-commerce site, and a full-featured **Event Planner** web app.
 
 - 🎓 B.Sc. Computer Science, **PMAS-Arid Agriculture University** (completed May 2026)
 - 🌍 Based in Gujrat, Pakistan
@@ -59,7 +59,6 @@ Previously I shipped **ThreatHawk**, a SIEM product, as part of the MERN team. O
 | Project | Description | Stack |
 | --- | --- | --- |
 | **CTEM** *(Cybersilo)* | Continuous threat exposure management platform with vulnerability monitoring and compliance reporting (CIS / PCI DSS / CMMC). | Python • React • DevOps |
-| **ThreatHawk SIEM** *(Cybersilo)* | Security information & event management product. | MERN |
 | **TrustBridge** | Platform connecting investors, entrepreneurs, and supporters for business and social campaigns. | React • Node.js |
 | **Gujrat Fans** | E-commerce site for a local fan manufacturing company. | Next.js • Vercel |
 | **Event Planner** | Full-featured app for creating and managing events end-to-end. | Next.js |
@@ -68,10 +67,9 @@ More on my [portfolio →](https://www.zain-imran.com)
 
 ---
 
-### GitHub Stats
+### GitHub Activity
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=zainImran864&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" />
   <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zainImran864&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
 </p>
 
