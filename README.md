@@ -17,9 +17,6 @@
 </p>
 
 ---
-<p align="center">
-  <img src="https://raw.githubusercontent.com/zainImran864/zainImran864/main/assets/coding.gif" width="280" alt="coding" />
-</p>
 
 ### About Me
 
@@ -30,6 +27,10 @@ Outside of enterprise work I've delivered freelance products including **TrustBr
 - 🎓 B.Sc. Computer Science, **PMAS-Arid Agriculture University** (completed May 2026)
 - 🌍 Based in Gujrat, Pakistan
 - ⚡ Open to collaboration on interesting products
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zainImran864/zainImran864/main/assets/coding.gif" width="280" alt="coding" />
+</p>
 
 ---
 
