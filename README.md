@@ -21,7 +21,6 @@
   <a href="https://www.zain-imran.com"><img src="https://img.shields.io/badge/Portfolio-zain--imran.com-3B82F6?style=for-the-badge&logo=vercel&logoColor=white" /></a>
   <a href="mailto:mirzazan3334@gmail.com"><img src="https://img.shields.io/badge/Email-mirzazan3334%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/zainimran98/"><img src="https://img.shields.io/badge/LinkedIn-Zain%20Imran-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <img src="https://komarev.com/ghpvc/?username=zainImran864&label=Profile+views&color=3B82F6&style=for-the-badge" />
 </p>
 
 ---
@@ -29,28 +28,12 @@
 ### 💡 Weekly Engineering & DevSecOps Insight
 
 <!-- WEEKLY-INSIGHT:START -->
-> ### 💡 Weekly Engineering & DevSecOps Insight
 > **⚡ System Architecture & Simplicity**
 > 
 > *"Simplicity is prerequisite for reliability. Complex systems fail in complex and unexpected ways. Keep the critical path transparent."*
 > 
 > — **Edsger W. Dijkstra**
 <!-- WEEKLY-INSIGHT:END -->
-
----
-
-### ⚡ Recent Engineering Activity & Velocity
-
-<div align="center">
-
-<!-- RECENT-ACTIVITY:START -->
-| Action | Repository | Date |
-| :--- | :--- | :---: |
-| 🚀 Pushed 1 commit | [`EPR_System`](https://github.com/zainImran864/EPR_System) | `2026-10-03` |
-| 🔀 Merged Pull Request | [`EPR_System`](https://github.com/zainImran864/EPR_System) | `2026-10-04` |
-<!-- RECENT-ACTIVITY:END -->
-
-</div>
 
 ---
 
