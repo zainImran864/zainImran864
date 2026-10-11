@@ -5,8 +5,16 @@
 
 <p align="center">
   <a href="https://www.zain-imran.com">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=3B82F6&center=true&vCenter=true&width=760&lines=Full-Stack+Engineer+%E2%9C%A6+Junior+Software+Engineer;Building+CTEM+%40+Cybersilo;MERN+%E2%80%A2+Next.js+%E2%80%A2+Python+%E2%80%A2+DevOps;Architecting+robust+systems+%26+exposure+management;Turning+complex+engineering+into+clean+products" alt="Typing intro" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3200&pause=900&color=3B82F6&center=true&vCenter=true&width=760&lines=Full-Stack+Engineer+%E2%9C%A6+Junior+Software+Engineer;Building+CTEM+%40+Cybersilo;MERN+%E2%80%A2+Next.js+%E2%80%A2+Python+%E2%80%A2+FastAPI+%E2%80%A2+DevSecOps;Architecting+robust+systems+%26+exposure+management;Turning+complex+engineering+into+clean+products" alt="Typing intro" />
   </a>
+</p>
+
+<!-- TAGS & SEARCH RANKING BADGES -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Focus-Full--Stack_Engineering-3B82F6?style=flat-square" alt="Full-Stack Engineering" />
+  <img src="https://img.shields.io/badge/Security-CTEM_%26_Attack_Surface-ef4444?style=flat-square" alt="CTEM & Attack Surface" />
+  <img src="https://img.shields.io/badge/Compliance-CIS_%E2%80%A2_PCI_DSS_%E2%80%A2_CMMC-10b981?style=flat-square" alt="Compliance Frameworks" />
+  <img src="https://img.shields.io/badge/Cloud-DevOps_%26_CI%2FCD-8b5cf6?style=flat-square" alt="DevOps & CI/CD" />
 </p>
 
 <p align="center">
@@ -17,43 +25,59 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/zainImran864/zainImran864/actions/workflows/weekly-profile-refresh.yml"><img src="https://img.shields.io/badge/Sync-Weekly_Automated_Refresh-22c55e?style=flat-square&logo=github-actions&logoColor=white" alt="Weekly Refresh" /></a>
-  <a href="https://github.com/zainImran864/zainImran864/actions/workflows/snake.yml"><img src="https://img.shields.io/badge/Activity-Weekly_Snake_Engine-3B82F6?style=flat-square&logo=github&logoColor=white" alt="Snake Action" /></a>
+  <a href="https://github.com/zainImran864/zainImran864/actions/workflows/weekly-profile-refresh.yml"><img src="https://img.shields.io/badge/Engine-Weekly_Profile_Refresh-22c55e?style=flat-square&logo=github-actions&logoColor=white" alt="Weekly Refresh" /></a>
+  <a href="https://github.com/zainImran864/zainImran864/actions/workflows/snake.yml"><img src="https://img.shields.io/badge/Activity-Weekly_Snake_Matrix-3B82F6?style=flat-square&logo=github&logoColor=white" alt="Snake Action" /></a>
+  <a href="https://github.com/zainImran864/zainImran864/actions/workflows/weekly-security-audit.yml"><img src="https://img.shields.io/badge/DevSecOps-Weekly_Exposure_Audit-8b5cf6?style=flat-square&logo=shield&logoColor=white" alt="Security Audit" /></a>
 </p>
 
 <p align="center">
 <!-- PROFILE-PULSE:START -->
-`🟢 Workflows: Active (Weekly Schedule)` • `📅 Last Synced: 2026-10-11` • `⚡ Automated via GitHub Actions`
+`🟢 Workflows: Active (Weekly Schedule)` • `📅 Last Synced: 2026-10-11` • `🛡️ Audit: Clean` • `⚡ Automated via GitHub Actions`
 <!-- PROFILE-PULSE:END -->
 </p>
 
 ---
 
-### 💡 Engineering Spotlight
+### 💡 Weekly Engineering & DevSecOps Insight
 
 <!-- WEEKLY-INSIGHT:START -->
-> ### 💡 Weekly Engineering Insight
+> ### 💡 Weekly Engineering & DevSecOps Insight
 > **⚡ System Architecture & Simplicity**
 > 
-> *"Simplicity is prerequisite for reliability. Complex systems fail in complex ways."*
+> *"Simplicity is prerequisite for reliability. Complex systems fail in complex and unexpected ways. Keep the critical path transparent."*
 > 
 > — **Edsger W. Dijkstra**
 > 
-> <small><sub>🔄 Auto-updated for Week 41 • Next refresh next Monday at 00:00 UTC</sub></small>
+> <small><sub>🔄 Auto-updated for Week 41 • Next refresh scheduled for next Monday at 00:00 UTC</sub></small>
 <!-- WEEKLY-INSIGHT:END -->
 
 ---
 
-### 👨‍💻 About Me
+### ⚡ Recent Engineering Activity & Velocity
 
-I'm a **Junior Software Engineer at Cybersilo**, currently engineering **CTEM (Continuous Threat Exposure Management)** — a mission-critical platform empowering organizations to proactively discover attack surfaces, manage exposures, and streamline compliance with frameworks like **CIS, PCI DSS, and CMMC**.
+<div align="center">
 
-Beyond enterprise systems, I've designed and shipped resilient full-stack applications including **TrustBridge** (investor × entrepreneur venture platform), **Gujrat Fans** (high-performance e-commerce engine), and a comprehensive **Event Planner** ecosystem.
+<!-- RECENT-ACTIVITY:START -->
+| Action | Repository | Date |
+| :--- | :--- | :---: |
+| 🚀 Pushed 1 commit | [`EPR_System`](https://github.com/zainImran864/EPR_System) | `2026-10-03` |
+| 🔀 Merged Pull Request | [`EPR_System`](https://github.com/zainImran864/EPR_System) | `2026-10-04` |
+<!-- RECENT-ACTIVITY:END -->
 
-- 🎓 **B.Sc. Computer Science**, *PMAS-Arid Agriculture University* (graduated May 2026)
-- 🌍 Based in **Gujrat, Pakistan**
-- 🛡️ Passionate about **Exposure Management, Cloud Security, Distributed Systems & Next-Gen Web Apps**
-- ⚡ Always open to collaboration on high-impact products & open-source engineering
+</div>
+
+---
+
+### 👨‍💻 Executive Overview
+
+I am a **Junior Software Engineer at Cybersilo**, focused on building enterprise-grade **CTEM (Continuous Threat Exposure Management)** systems. My core engineering responsibilities encompass automating attack surface discovery, asset prioritization, and aligning infrastructure against gold-standard compliance frameworks including **CIS Controls, PCI DSS, and CMMC**.
+
+Alongside enterprise cybersecurity engineering, I design and ship high-performance, full-stack software across modern web ecosystems. From high-throughput APIs to fluid client-side interfaces, I prioritize clean architecture, automated workflows, and resilient engineering.
+
+- 🎓 **B.Sc. in Computer Science**, *PMAS-Arid Agriculture University* (graduated May 2026)
+- 🌍 Based in **Gujrat, Pakistan** • Open to remote global engineering opportunities
+- 🛡️ **Core Specializations:** Threat Exposure Management, API Architecture, Cloud Native Systems, Full-Stack TypeScript/Python
+- 🚀 **Philosophy:** Continuous automation, rigorous type safety, and defensive engineering
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/zainImran864/zainImran864/main/assets/coding.gif" width="300" alt="coding animation" />
@@ -61,17 +85,30 @@ Beyond enterprise systems, I've designed and shipped resilient full-stack applic
 
 ---
 
-### 🛠️ Tech Stack & Arsenal
+### 🏛️ Engineering Pillars
+
+```
+┌─────────────────────────────────┐   ┌─────────────────────────────────┐   ┌─────────────────────────────────┐
+│     Defensive Engineering       │   │      Full-Stack Craftsmanship   │   │       DevSecOps & CI/CD         │
+│  • CTEM & Exposure Discovery    │   │  • Type-Safe Next.js & React    │   │  • Automated Testing Workflows  │
+│  • CIS, PCI DSS & CMMC Posture  │──▶│  • Scalable FastAPI & Node APIs │──▶│  • Secret Scanning & Container  │
+│  • Least Privilege & Zero Trust │   │  • Normalized Relational & NoSQL│   │  • Deterministic Weekly Audits  │
+└─────────────────────────────────┘   └─────────────────────────────────┘   └─────────────────────────────────┘
+```
+
+---
+
+### 🛠️ Tech Stack & Architecture Arsenal
 
 <table align="center" width="100%">
   <tr>
-    <td width="25%" valign="top"><b>Languages</b></td>
-    <td width="75%">
+    <td width="26%" valign="top"><b>Languages</b></td>
+    <td width="74%">
       <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=js,ts,python,html,css" alt="Languages" /></a>
     </td>
   </tr>
   <tr>
-    <td valign="top"><b>Frontend</b></td>
+    <td valign="top"><b>Frontend Engineering</b></td>
     <td>
       <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,redux,threejs" alt="Frontend" /></a>
     </td>
@@ -89,7 +126,7 @@ Beyond enterprise systems, I've designed and shipped resilient full-stack applic
     </td>
   </tr>
   <tr>
-    <td valign="top"><b>DevOps & Tooling</b></td>
+    <td valign="top"><b>DevOps, Security & Tools</b></td>
     <td>
       <a href="https://skillicons.dev"><img src="https://skillicons.dev/icons?i=git,github,docker,linux,postman,vercel" alt="DevOps and Tools" /></a>
     </td>
@@ -98,16 +135,17 @@ Beyond enterprise systems, I've designed and shipped resilient full-stack applic
 
 ---
 
-### 🚀 Featured Systems & Projects
+### 🚀 Featured Systems & Production Portfolio
 
-| Project | Description | Stack & Architecture | Status |
+| System | Role & Description | Architecture & Stack | Status |
 | :--- | :--- | :--- | :---: |
-| **🛡️ CTEM** *(Cybersilo)* | Enterprise continuous threat exposure management platform with automated vulnerability monitoring, attack surface mapping, and compliance scoring (CIS / PCI DSS / CMMC). | `Python` • `FastAPI` • `React` • `DevOps` | 🏢 Enterprise |
-| **🤝 TrustBridge** | Collaborative ecosystem connecting investors, ventures, and supporters for business campaigns and transparent social funding. | `React` • `Node.js` • `Express` • `MongoDB` | 🚀 Production |
-| **⚡ Gujrat Fans** | Modern, responsive e-commerce web platform engineered for a leading industrial manufacturing company with real-time catalog navigation. | `Next.js` • `Tailwind CSS` • `Vercel` | 🌐 Live |
-| **📅 Event Planner** | End-to-end full-lifecycle event management application with scheduling, invitations, and state persistence. | `Next.js` • `TypeScript` • `Tailwind CSS` | 🛠️ Production |
+| **🛡️ CTEM Platform** *(Cybersilo)* | Continuous Threat Exposure Management engine featuring automated vulnerability aggregation, attack surface reconnaissance, and compliance scoring against CIS, PCI DSS, and CMMC. | `Python` • `FastAPI` • `React` • `Docker` • `DevSecOps` | 🏢 Enterprise |
+| **🤝 TrustBridge** | Collaborative platform bridging angel investors, venture entrepreneurs, and supporters with verifiable campaign milestones and transactional transparency. | `React` • `Node.js` • `Express` • `MongoDB` • `REST` | 🚀 Production |
+| **⚡ Gujrat Fans** | Modern, responsive direct-to-consumer & B2B e-commerce platform built for a premier industrial manufacturer, featuring real-time catalog filtering and dynamic asset delivery. | `Next.js` • `Tailwind CSS` • `Vercel` • `TypeScript` | 🌐 Live |
+| **📅 Event Planner** | Full-lifecycle event management application featuring automated scheduling, participant invitation loops, and synchronized state persistence. | `Next.js` • `TypeScript` • `Tailwind CSS` • `Supabase` | 🛠️ Production |
+| **⚙️ EPR System** | Enterprise planning and resource management system engineered with role-based access control and structured workflow management. | `TypeScript` • `React` • `Node.js` • `PostgreSQL` | 📦 Active Dev |
 
-Explore more implementations and repositories on my [Portfolio →](https://www.zain-imran.com)
+Explore additional repositories and source code on my [Portfolio Website →](https://www.zain-imran.com)
 
 ---
 
@@ -119,22 +157,37 @@ Explore more implementations and repositories on my [Portfolio →](https://www.
 </div>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zainImran864&theme=tokyonight&hide_border=true&stroke=38bdf8&ring=3b82f6&fire=38bdf8&currStreakNum=ffffff" alt="Contribution Streak" />
-</p>
-
-<p align="center">
   <img src="https://raw.githubusercontent.com/zainImran864/zainImran864/output/github-contribution-grid-snake-dark.svg" alt="Snake Contribution Map" />
 </p>
 
 ---
 
-### 📬 Get In Touch
+### 🔍 Search & Discoverability Tags
 
-- 🌐 **Portfolio Website:** [www.zain-imran.com](https://www.zain-imran.com)
-- 📧 **Direct Email:** [mirzazan3334@gmail.com](mailto:mirzazan3334@gmail.com)
-- 💼 **LinkedIn Profile:** [linkedin.com/in/zain-imran](https://www.linkedin.com/in/zain-imran-792545320/)
-- 🤝 **Open For:** Engineering Roles, Collaborative Systems & Exciting Ventures
+<details>
+<summary><b>🏷️ Expand Indexing Keywords & SEO Taxonomy</b></summary>
+<br />
+
+```
+#Roles: Full-Stack Developer | Junior Software Engineer | DevSecOps Engineer | Backend Engineer | Frontend Developer
+#CoreTechnologies: TypeScript | Python | JavaScript | React | Next.js | Node.js | FastAPI | Express | TailwindCSS
+#Databases: MongoDB | PostgreSQL | MySQL | Supabase
+#CloudAndDevOps: Docker | Linux | Git | GitHub Actions | CI/CD | Vercel | Postman
+#CybersecurityAndCTEM: Continuous Threat Exposure Management | Attack Surface Management | CIS Controls | PCI DSS | CMMC | OWASP Top 10 | Vulnerability Assessment
+#Location: Gujrat, Pakistan | Remote
+```
+
+</details>
+
+---
+
+### 📬 Connect & Collaborate
+
+- 🌐 **Portfolio:** [www.zain-imran.com](https://www.zain-imran.com)
+- 📧 **Email:** [mirzazan3334@gmail.com](mailto:mirzazan3334@gmail.com)
+- 💼 **LinkedIn:** [linkedin.com/in/zain-imran](https://www.linkedin.com/in/zain-imran-792545320/)
+- 🤝 **Collaboration:** Open to engineering roles, product development, and open-source systems
 
 <p align="center">
-  <i>Crafted with precision • Powered by curiosity and continuous iteration 🚀</i>
+  <i>Engineered with precision • Powered by curiosity and continuous iteration 🚀</i>
 </p>

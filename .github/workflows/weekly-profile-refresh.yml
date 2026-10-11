@@ -22,6 +22,8 @@ jobs:
           python-version: "3.x"
 
       - name: Update README Dynamic Content
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/update_readme.py
 
       - name: Commit and Push Changes
