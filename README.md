@@ -20,20 +20,8 @@
 <p align="center">
   <a href="https://www.zain-imran.com"><img src="https://img.shields.io/badge/Portfolio-zain--imran.com-3B82F6?style=for-the-badge&logo=vercel&logoColor=white" /></a>
   <a href="mailto:mirzazan3334@gmail.com"><img src="https://img.shields.io/badge/Email-mirzazan3334%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://www.linkedin.com/in/zain-imran-792545320/"><img src="https://img.shields.io/badge/LinkedIn-Zain%20Imran-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/zainimran98/"><img src="https://img.shields.io/badge/LinkedIn-Zain%20Imran-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
   <img src="https://komarev.com/ghpvc/?username=zainImran864&label=Profile+views&color=3B82F6&style=for-the-badge" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/zainImran864/zainImran864/actions/workflows/weekly-profile-refresh.yml"><img src="https://img.shields.io/badge/Engine-Weekly_Profile_Refresh-22c55e?style=flat-square&logo=github-actions&logoColor=white" alt="Weekly Refresh" /></a>
-  <a href="https://github.com/zainImran864/zainImran864/actions/workflows/snake.yml"><img src="https://img.shields.io/badge/Activity-Weekly_Snake_Matrix-3B82F6?style=flat-square&logo=github&logoColor=white" alt="Snake Action" /></a>
-  <a href="https://github.com/zainImran864/zainImran864/actions/workflows/weekly-security-audit.yml"><img src="https://img.shields.io/badge/DevSecOps-Weekly_Exposure_Audit-8b5cf6?style=flat-square&logo=shield&logoColor=white" alt="Security Audit" /></a>
-</p>
-
-<p align="center">
-<!-- PROFILE-PULSE:START -->
-`🟢 Workflows: Active (Weekly Schedule)` • `📅 Last Synced: 2026-10-11` • `🛡️ Audit: Clean` • `⚡ Automated via GitHub Actions`
-<!-- PROFILE-PULSE:END -->
 </p>
 
 ---
@@ -47,8 +35,6 @@
 > *"Simplicity is prerequisite for reliability. Complex systems fail in complex and unexpected ways. Keep the critical path transparent."*
 > 
 > — **Edsger W. Dijkstra**
-> 
-> <small><sub>🔄 Auto-updated for Week 41 • Next refresh scheduled for next Monday at 00:00 UTC</sub></small>
 <!-- WEEKLY-INSIGHT:END -->
 
 ---
@@ -185,7 +171,7 @@ Explore additional repositories and source code on my [Portfolio Website →](ht
 
 - 🌐 **Portfolio:** [www.zain-imran.com](https://www.zain-imran.com)
 - 📧 **Email:** [mirzazan3334@gmail.com](mailto:mirzazan3334@gmail.com)
-- 💼 **LinkedIn:** [linkedin.com/in/zain-imran](https://www.linkedin.com/in/zain-imran-792545320/)
+- 💼 **LinkedIn:** [linkedin.com/in/zainimran98](https://www.linkedin.com/in/zainimran98/)
 - 🤝 **Collaboration:** Open to engineering roles, product development, and open-source systems
 
 <p align="center">

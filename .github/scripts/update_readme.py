@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
 Weekly Profile Refresh Script for Zain Imran's GitHub Profile.
-- Updates the dynamic weekly engineering & CTEM security insight
+- Updates the dynamic weekly engineering & DevSecOps insight
 - Updates recent GitHub engineering activity & project velocity
-- Synchronizes the automation pulse badge and timestamps
 Runs via GitHub Actions once every week (Mondays at 00:00 UTC).
 """
 
@@ -65,19 +64,12 @@ def get_weekly_insight():
     return insight, now, week_num
 
 def generate_insight_markdown(insight, now, week_num):
-    date_str = now.strftime("%B %d, %Y")
     return f"""> ### 💡 Weekly Engineering & DevSecOps Insight
 > **{insight['topic']}**
 > 
 > *"{insight['quote']}"*
 > 
-> — **{insight['author']}**
-> 
-> <small><sub>🔄 Auto-updated for Week {week_num} • Next refresh scheduled for next Monday at 00:00 UTC</sub></small>"""
-
-def generate_pulse_markdown(now):
-    date_str = now.strftime("%Y-%m-%d")
-    return f"`🟢 Workflows: Active (Weekly Schedule)` • `📅 Last Synced: {date_str}` • `🛡️ Audit: Clean` • `⚡ Automated via GitHub Actions`"
+> — **{insight['author']}**"""
 
 def fetch_recent_activity(username="zainImran864", limit=5):
     """Fetches public GitHub events for the user to display recent activity."""
@@ -152,7 +144,6 @@ def update_readme():
     insight, now, week_num = get_weekly_insight()
 
     insight_md = generate_insight_markdown(insight, now, week_num)
-    pulse_md = generate_pulse_markdown(now)
     activity_table = fetch_recent_activity()
 
     # Replace insight section
@@ -161,16 +152,6 @@ def update_readme():
         content = re.sub(
             insight_pattern,
             f"\\1\n{insight_md}\n\\3",
-            content,
-            flags=re.DOTALL
-        )
-
-    # Replace pulse section
-    pulse_pattern = r"(<!-- PROFILE-PULSE:START -->)(.*?)(<!-- PROFILE-PULSE:END -->)"
-    if re.search(pulse_pattern, content, flags=re.DOTALL):
-        content = re.sub(
-            pulse_pattern,
-            f"\\1\n{pulse_md}\n\\3",
             content,
             flags=re.DOTALL
         )
@@ -187,7 +168,7 @@ def update_readme():
             )
 
     readme_path.write_text(content, encoding="utf-8")
-    print(f"Successfully updated README.md for Week {week_num} ({now.strftime('%Y-%m-%d')}).")
+    print(f"Successfully updated README.md.")
 
 if __name__ == "__main__":
     update_readme()
