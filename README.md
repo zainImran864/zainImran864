@@ -148,24 +148,14 @@ Explore additional repositories and source code on my [Portfolio Website →](ht
 
 ---
 
-### 🔍 Search & Discoverability Tags
-
-<details>
-<summary><b>🏷️ Expand Indexing Keywords & SEO Taxonomy</b></summary>
-<br />
-
-```
+<!-- BACKEND SEARCH & DISCOVERABILITY INDEXING METADATA
 #Roles: Full-Stack Developer | Junior Software Engineer | DevSecOps Engineer | Backend Engineer | Frontend Developer
 #CoreTechnologies: TypeScript | Python | JavaScript | React | Next.js | Node.js | FastAPI | Express | TailwindCSS
 #Databases: MongoDB | PostgreSQL | MySQL | Supabase
 #CloudAndDevOps: Docker | Linux | Git | GitHub Actions | CI/CD | Vercel | Postman
 #CybersecurityAndCTEM: Continuous Threat Exposure Management | Attack Surface Management | CIS Controls | PCI DSS | CMMC | OWASP Top 10 | Vulnerability Assessment
 #Location: Gujrat, Pakistan | Remote
-```
-
-</details>
-
----
+-->
 
 ### 📬 Connect & Collaborate
 
