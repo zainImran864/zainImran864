@@ -28,11 +28,11 @@
 ### 💡 Weekly Engineering & DevSecOps Insight
 
 <!-- WEEKLY-INSIGHT:START -->
-> **⚡ System Architecture & Simplicity**
+> **🚀 Clean Code & Craftsmanship**
 > 
-> *"Simplicity is prerequisite for reliability. Complex systems fail in complex and unexpected ways. Keep the critical path transparent."*
+> *"Any fool can write code that a computer can understand. Good software engineers write code that humans can understand and maintain."*
 > 
-> — **Edsger W. Dijkstra**
+> — **Martin Fowler**
 <!-- WEEKLY-INSIGHT:END -->
 
 ---
