@@ -28,11 +28,11 @@
 ### 💡 Weekly Engineering & DevSecOps Insight
 
 <!-- WEEKLY-INSIGHT:START -->
-> **🚀 Clean Code & Craftsmanship**
+> **🔒 Zero Trust & Defense in Depth**
 > 
-> *"Any fool can write code that a computer can understand. Good software engineers write code that humans can understand and maintain."*
+> *"Never trust, always verify. Assume breach and enforce least privilege from the edge reverse-proxy down to database tables."*
 > 
-> — **Martin Fowler**
+> — **Zero Trust Security Model**
 <!-- WEEKLY-INSIGHT:END -->
 
 ---
