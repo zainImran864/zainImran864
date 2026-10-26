@@ -28,11 +28,11 @@
 ### 💡 Weekly Engineering & DevSecOps Insight
 
 <!-- WEEKLY-INSIGHT:START -->
-> **🔒 Zero Trust & Defense in Depth**
+> **🔄 Automation & DevOps Velocity**
 > 
-> *"Never trust, always verify. Assume breach and enforce least privilege from the edge reverse-proxy down to database tables."*
+> *"If you perform a task manually more than twice, automate it. If it touches production, observe, measure, and audit it continuously."*
 > 
-> — **Zero Trust Security Model**
+> — **Modern DevSecOps Philosophy**
 <!-- WEEKLY-INSIGHT:END -->
 
 ---
