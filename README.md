@@ -28,11 +28,11 @@
 ### 💡 Weekly Engineering & DevSecOps Insight
 
 <!-- WEEKLY-INSIGHT:START -->
-> **🔄 Automation & DevOps Velocity**
+> **🧩 Resilient API Architecture**
 > 
-> *"If you perform a task manually more than twice, automate it. If it touches production, observe, measure, and audit it continuously."*
+> *"Good APIs are intuitive to use and practically impossible to misuse. Design interfaces from consumer ergonomics backward to the database."*
 > 
-> — **Modern DevSecOps Philosophy**
+> — **Joshua Bloch**
 <!-- WEEKLY-INSIGHT:END -->
 
 ---
