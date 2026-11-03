@@ -2,7 +2,7 @@
 
   <!-- EXECUTIVE SVG HERO BANNER WITH ANIMATED FLOWING WAVES -->
   <a href="https://www.zain-imran.com">
-    <img src="./assets/hero-banner.svg" alt="Zain Imran — Software Engineer | Full-Stack Architecture & CTEM Security Engineering" width="100%" />
+    <img src="./assets/hero-banner.svg" alt="Zain Imran — Software Engineer at Cybersilo | Full-Stack Developer (TypeScript, Next.js, React, Python, FastAPI, Node.js, PostgreSQL, MongoDB, Docker) & CTEM Security Engineering" width="100%" />
   </a>
 
   <br />
@@ -235,21 +235,23 @@
 
 <p align="center">
   <a href="https://www.zain-imran.com">
-    <img src="./assets/connect-banner.svg" alt="Connect & Collaborate — Web Portfolio, LinkedIn Network, Direct Engineering Inquiry" width="100%" />
+    <img src="./assets/connect-banner.svg" alt="Connect & Collaborate with Zain Imran — Web Portfolio (www.zain-imran.com), LinkedIn (linkedin.com/in/zainimran98), Direct Email (mirzazan3334@gmail.com)" width="100%" />
   </a>
 </p>
 
-<p align="center">
-  <a href="https://www.zain-imran.com">
-    <img src="https://img.shields.io/badge/🌐_Web_Portfolio-www.zain--imran.com-0F172A?style=for-the-badge&labelColor=090D16&color=38BDF8" alt="Web Portfolio" />
-  </a>
-  <a href="https://www.linkedin.com/in/zainimran98/">
-    <img src="https://img.shields.io/badge/💼_LinkedIn_Network-in%2Fzainimran98-0F172A?style=for-the-badge&labelColor=090D16&color=0A66C2" alt="LinkedIn Network" />
-  </a>
-  <a href="mailto:mirzazan3334@gmail.com">
-    <img src="https://img.shields.io/badge/📧_Direct_Inquiry-mirzazan3334%40gmail.com-0F172A?style=for-the-badge&labelColor=090D16&color=10B981" alt="Direct Engineering Inquiry" />
-  </a>
-</p>
+<div align="center">
+  <details>
+    <summary><sub><b>🔍 Engineering Specializations &amp; Technical Index</b></sub></summary>
+    <br />
+    <sub>
+      <b>Identity &amp; Roles:</b> Zain Imran • Software Engineer • Junior Software Engineer at Cybersilo • Full-Stack Developer • Backend Engineer • Frontend Engineer • DevSecOps &amp; CTEM Engineer<br />
+      <b>Core Stack:</b> TypeScript • Python • JavaScript (ES6+) • React.js • Next.js • FastAPI • Node.js • Express.js • Flask • Tailwind CSS • Redux<br />
+      <b>Databases &amp; Cloud:</b> PostgreSQL • MongoDB • MySQL • Supabase • Docker • Linux • GitHub Actions CI/CD • Vercel • REST APIs<br />
+      <b>Cybersecurity &amp; Compliance:</b> Continuous Threat Exposure Management (CTEM) • Attack Surface Discovery • CIS Controls • PCI DSS • CMMC • Zero-Trust Security<br />
+      <b>Location &amp; Availability:</b> Gujrat, Pakistan • Open to Global Remote Software Engineering Opportunities
+    </sub>
+  </details>
+</div>
 
 <p align="center">
   <sub>Engineered with precision by <b>Zain Imran</b> • Automated telemetry &amp; security posture verified via GitHub Actions</sub>
