@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%" role="img" aria-label="Zain Imran - Software Engineer &amp; CTEM Architect">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#091020" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="65%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <radialGradient id="glowLeft" cx="18%" cy="25%" r="45%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowRight" cx="85%" cy="75%" r="45%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.7" stroke-opacity="0.55" />
+    </pattern>
+  </defs>
+
+  <!-- Main Card Frame -->
+  <rect width="1200" height="320" rx="18" fill="url(#bgGrad)" />
+  <rect width="1200" height="320" rx="18" fill="url(#grid)" />
+  <rect width="1200" height="320" rx="18" fill="url(#glowLeft)" />
+  <rect width="1200" height="320" rx="18" fill="url(#glowRight)" />
+  <rect x="1" y="1" width="1198" height="318" rx="17" fill="none" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Top Accent Line -->
+  <rect x="0" y="0" width="1200" height="4" rx="2" fill="url(#accentGrad)" />
+
+  <!-- Top Bar / Terminal Telemetry Header -->
+  <g transform="translate(48, 34)">
+    <circle cx="8" cy="8" r="5.5" fill="#EF4444" />
+    <circle cx="26" cy="8" r="5.5" fill="#F59E0B" />
+    <circle cx="44" cy="8" r="5.5" fill="#10B981" />
+    <text x="68" y="12.5" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" fill="#64748B" letter-spacing="0.5">
+      zain-imran@cybersilo:~/systems-architecture $ <tspan fill="#38BDF8">status --posture=verified</tspan>
+    </text>
+  </g>
+
+  <!-- Live Operational Pill (Top Right) -->
+  <g transform="translate(916, 24)">
+    <rect width="236" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+    <circle cx="18" cy="14" r="4.5" fill="#10B981">
+      <animate attributeName="opacity" values="1;0.35;1" dur="2.2s" repeatCount="indefinite" />
+    </circle>
+    <text x="32" y="18" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0" letter-spacing="0.8">
+      SYSTEMS ONLINE • CTEM
+    </text>
+  </g>
+
+  <!-- Main Headline & Identity -->
+  <g transform="translate(48, 114)">
+    <text x="0" y="0" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="46" font-weight="800" fill="url(#textGrad)" letter-spacing="-0.8">
+      Zain Imran
+    </text>
+    <text x="0" y="38" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#38BDF8" letter-spacing="0.2">
+      Software Engineer  •  Full-Stack Architecture &amp; CTEM Security Engineering
+    </text>
+    <text x="0" y="70" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14.5" fill="#94A3B8">
+      Architecting continuous threat exposure management at <tspan fill="#F8FAFC" font-weight="600">Cybersilo</tspan> &amp; shipping resilient full-stack web systems.
+    </text>
+  </g>
+
+  <!-- Bottom Capability Badges -->
+  <g transform="translate(48, 232)">
+    <!-- Badge 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="250" height="36" rx="8" fill="#111C33" stroke="#1E3A5F" stroke-width="1" />
+      <text x="16" y="23" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" fill="#38BDF8">
+        🛡️ CTEM • CIS • PCI DSS • CMMC
+      </text>
+    </g>
+    <!-- Badge 2 -->
+    <g transform="translate(264, 0)">
+      <rect width="286" height="36" rx="8" fill="#111C33" stroke="#1E3A5F" stroke-width="1" />
+      <text x="16" y="23" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" fill="#60A5FA">
+        ⚡ Next.js • React • FastAPI • Node
+      </text>
+    </g>
+    <!-- Badge 3 -->
+    <g transform="translate(564, 0)">
+      <rect width="236" height="36" rx="8" fill="#111C33" stroke="#1E3A5F" stroke-width="1" />
+      <text x="16" y="23" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" fill="#34D399">
+        🔒 TypeScript • Python • Docker
+      </text>
+    </g>
+  </g>
+
+  <!-- Right-side Decorative Cyber Architecture Node Graphic -->
+  <g transform="translate(915, 86)">
+    <rect x="0" y="0" width="236" height="182" rx="12" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
+    <text x="18" y="28" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1">
+      ARCHITECTURE POSTURE
+    </text>
+    <line x1="18" y1="38" x2="218" y2="38" stroke="#1E293B" stroke-width="1" />
+
+    <text x="18" y="64" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
+      Surface Discovery
+    </text>
+    <text x="178" y="64" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#10B981">
+      ACTIVE
+    </text>
+
+    <text x="18" y="94" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
+      API Type Safety
+    </text>
+    <text x="178" y="94" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8">
+      STRICT
+    </text>
+
+    <text x="18" y="124" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
+      Compliance Engine
+    </text>
+    <text x="164" y="124" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#60A5FA">
+      CIS/CMMC
+    </text>
+
+    <text x="18" y="154" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
+      CI/CD Audits
+    </text>
+    <text x="164" y="154" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#A78BFA">
+      VERIFIED
+    </text>
+  </g>
+</svg>

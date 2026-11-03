@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 310" width="100%" height="100%" role="img" aria-label="GitHub Engineering Telemetry and Language Distribution">
+  <defs>
+    <linearGradient id="telemetryBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <clipPath id="barClip">
+      <rect x="0" y="0" width="500" height="12" rx="6" />
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="310" rx="16" fill="url(#telemetryBg)" />
+  <rect x="1" y="1" width="1198" height="308" rx="15" fill="none" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Left Panel: Engineering & Repository Telemetry -->
+  <g transform="translate(36, 34)">
+    <text x="0" y="0" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.2">
+      ⚡ GITHUB ENGINEERING TELEMETRY
+    </text>
+    <text x="0" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
+      System Metrics &amp; Repository Posture
+    </text>
+
+    <!-- 4 Metric Bento Boxes -->
+    <g transform="translate(0, 52)">
+      <!-- Box 1 -->
+      <rect x="0" y="0" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
+      <text x="18" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Public Repositories</text>
+      <text x="18" y="62" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="26" font-weight="800" fill="#38BDF8">17</text>
+      <text x="185" y="60" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#10B981">● ACTIVE</text>
+
+      <!-- Box 2 -->
+      <rect x="274" y="0" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
+      <text x="292" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Stars &amp; Community Reach</text>
+      <text x="292" y="62" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="26" font-weight="800" fill="#FBBF24">1 ★</text>
+      <text x="415" y="60" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#94A3B8">4 Followers</text>
+
+      <!-- Box 3 -->
+      <rect x="0" y="98" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
+      <text x="18" y="126" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Security &amp; Secret Audit</text>
+      <text x="18" y="160" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="20" font-weight="800" fill="#10B981">PASSING ✓</text>
+      <text x="165" y="158" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#64748B">0 Leaks</text>
+
+      <!-- Box 4 -->
+      <rect x="274" y="98" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
+      <text x="292" y="126" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Primary Engineering Focus</text>
+      <text x="292" y="160" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="18" font-weight="800" fill="#60A5FA">CTEM &amp; Full-Stack</text>
+    </g>
+
+    <text x="0" y="254" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#64748B">
+      Auto-synced via GitHub Actions • Last telemetry snapshot: 2026-11-03 12:36 UTC
+    </text>
+  </g>
+
+  <!-- Vertical Divider -->
+  <line x1="608" y1="32" x2="608" y2="278" stroke="#1E293B" stroke-width="1.2" />
+
+  <!-- Right Panel: Language & Architecture Distribution -->
+  <g transform="translate(652, 34)">
+    <text x="0" y="0" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#10B981" letter-spacing="1.2">
+      📊 CODEBASE LANGUAGE DISTRIBUTION
+    </text>
+    <text x="0" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
+      Primary Production Stack
+    </text>
+
+    <!-- Combined Multi-Segment Progress Bar -->
+    <g transform="translate(0, 54)" clip-path="url(#barClip)">
+      <rect x="0" y="0" width="211.0" height="12" fill="#3178C6" /><rect x="211.0" y="0" width="188.5" height="12" fill="#F7DF1E" /><rect x="399.5" y="0" width="100.5" height="12" fill="#E34C26" />
+    </g>
+
+    <!-- Language Breakdown Rows -->
+    <g transform="translate(0, -35)">
+      
+      <g transform="translate(0, 140)">
+        <circle cx="8" cy="-4" r="5" fill="#3178C6" />
+        <text x="22" y="0" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" font-weight="600" fill="#E2E8F0">TypeScript</text>
+        <rect x="160" y="-10" width="240" height="8" rx="4" fill="#1E293B" />
+        <rect x="160" y="-10" width="101.3" height="8" rx="4" fill="#3178C6" />
+        <text x="495" y="0" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600" fill="#94A3B8">42.2%</text>
+      </g>
+      <g transform="translate(0, 170)">
+        <circle cx="8" cy="-4" r="5" fill="#F7DF1E" />
+        <text x="22" y="0" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" font-weight="600" fill="#E2E8F0">JavaScript</text>
+        <rect x="160" y="-10" width="240" height="8" rx="4" fill="#1E293B" />
+        <rect x="160" y="-10" width="90.5" height="8" rx="4" fill="#F7DF1E" />
+        <text x="495" y="0" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600" fill="#94A3B8">37.7%</text>
+      </g>
+      <g transform="translate(0, 200)">
+        <circle cx="8" cy="-4" r="5" fill="#E34C26" />
+        <text x="22" y="0" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" font-weight="600" fill="#E2E8F0">HTML/CSS</text>
+        <rect x="160" y="-10" width="240" height="8" rx="4" fill="#1E293B" />
+        <rect x="160" y="-10" width="48.2" height="8" rx="4" fill="#E34C26" />
+        <text x="495" y="0" text-anchor="end" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600" fill="#94A3B8">20.1%</text>
+      </g>
+    </g>
+  </g>
+</svg>
