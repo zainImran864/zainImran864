@@ -34,7 +34,7 @@
 <div align="center">
   <table width="100%">
     <tr>
-      <td width="62%" valign="top">
+      <td width="50%" rowspan="6" valign="middle">
         <p>
           I am a <b>Software Engineer at Cybersilo</b> specializing in enterprise <b>CTEM (Continuous Threat Exposure Management)</b> platforms and resilient full-stack web architectures.
         </p>
@@ -45,30 +45,28 @@
           Beyond security engineering, I architect and ship end-to-end production applications across the <b>TypeScript (Next.js, React, Node.js)</b> and <b>Python (FastAPI, Flask)</b> ecosystems—combining strict type safety, normalized data models, and deterministic CI/CD automation.
         </p>
       </td>
-      <td width="38%" valign="top">
-        <table>
-          <tr>
-            <td><b>💼 Current Role</b></td>
-            <td>Jr. Software Engineer @ <b>Cybersilo</b></td>
-          </tr>
-          <tr>
-            <td><b>🛡️ Core Focus</b></td>
-            <td>CTEM, Attack Surface &amp; Full-Stack</td>
-          </tr>
-          <tr>
-            <td><b>📋 Frameworks &amp; Stack</b></td>
-            <td><code>Python</code> • <code>React</code> • <code>Docker</code> • <code>MongoDB</code> • <code>PostgreSQL</code></td>
-          </tr>
-          <tr>
-            <td><b>🎓 Education</b></td>
-            <td>B.Sc. Computer Science <i>(May 2026)</i><br/><sub>PMAS-Arid Agriculture University</sub></td>
-          </tr>
-          <tr>
-            <td><b>🌍 Location</b></td>
-            <td>Gujrat, Pakistan <i>(Global Remote)</i></td>
-          </tr>
-        </table>
-      </td>
+      <td width="20%" valign="middle"><b>💼 Current Role</b></td>
+      <td width="30%" valign="middle">Jr. Software Engineer @ <b>Cybersilo</b></td>
+    </tr>
+    <tr>
+      <td valign="middle"><b>🛡️ Core Focus</b></td>
+      <td valign="middle">CTEM, Attack Surface &amp; Full-Stack</td>
+    </tr>
+    <tr>
+      <td valign="middle"><b>📋 Frameworks &amp; Stack</b></td>
+      <td valign="middle"><code>Python</code> • <code>React</code> • <code>Docker</code> • <code>MongoDB</code> • <code>PostgreSQL</code></td>
+    </tr>
+    <tr>
+      <td valign="middle"><b>🔒 Security Standards</b></td>
+      <td valign="middle"><code>CIS Controls</code> • <code>PCI DSS</code> • <code>CMMC</code></td>
+    </tr>
+    <tr>
+      <td valign="middle"><b>🎓 Education</b></td>
+      <td valign="middle">B.Sc. Computer Science <i>(May 2026)</i><br/><sub>PMAS-Arid Agriculture University</sub></td>
+    </tr>
+    <tr>
+      <td valign="middle"><b>🌍 Location</b></td>
+      <td valign="middle">Gujrat, Pakistan <i>(Global Remote)</i></td>
     </tr>
   </table>
 </div>
