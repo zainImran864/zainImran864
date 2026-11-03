@@ -222,15 +222,6 @@
 
 ---
 
-<!-- BACKEND SEARCH & DISCOVERABILITY INDEXING METADATA
-#Roles: Full-Stack Developer | Junior Software Engineer | Software Engineer | DevSecOps Engineer | Backend Engineer | Frontend Developer
-#CoreTechnologies: TypeScript | Python | JavaScript | React | Next.js | Node.js | FastAPI | Express | TailwindCSS
-#Databases: MongoDB | PostgreSQL | MySQL | Supabase
-#CloudAndDevOps: Docker | Linux | Git | GitHub Actions | CI/CD | Vercel | Postman
-#CybersecurityAndCTEM: Continuous Threat Exposure Management | Attack Surface Management | CIS Controls | PCI DSS | CMMC | OWASP Top 10 | Vulnerability Assessment
-#Location: Gujrat, Pakistan | Remote
--->
-
 <h2 align="center">📬 Connect &amp; Collaborate</h2>
 
 <p align="center">
@@ -239,19 +230,11 @@
   </a>
 </p>
 
-<div align="center">
-  <details>
-    <summary><sub><b>🔍 Engineering Specializations &amp; Technical Index</b></sub></summary>
-    <br />
-    <sub>
-      <b>Identity &amp; Roles:</b> Zain Imran • Software Engineer • Junior Software Engineer at Cybersilo • Full-Stack Developer • Backend Engineer • Frontend Engineer • DevSecOps &amp; CTEM Engineer<br />
-      <b>Core Stack:</b> TypeScript • Python • JavaScript (ES6+) • React.js • Next.js • FastAPI • Node.js • Express.js • Flask • Tailwind CSS • Redux<br />
-      <b>Databases &amp; Cloud:</b> PostgreSQL • MongoDB • MySQL • Supabase • Docker • Linux • GitHub Actions CI/CD • Vercel • REST APIs<br />
-      <b>Cybersecurity &amp; Compliance:</b> Continuous Threat Exposure Management (CTEM) • Attack Surface Discovery • CIS Controls • PCI DSS • CMMC • Zero-Trust Security<br />
-      <b>Location &amp; Availability:</b> Gujrat, Pakistan • Open to Global Remote Software Engineering Opportunities
-    </sub>
-  </details>
-</div>
+<p align="center">
+  <sub>
+    <b>Core Specializations &amp; Stack:</b> Zain Imran • Software Engineer @ Cybersilo • Full-Stack Developer • CTEM &amp; DevSecOps Engineer • TypeScript • Python • JavaScript • React • Next.js • FastAPI • Node.js • Express • PostgreSQL • MongoDB • MySQL • Supabase • Docker • Linux • GitHub Actions CI/CD • CIS Controls • PCI DSS • CMMC • Gujrat, Pakistan (Global Remote)
+  </sub>
+</p>
 
 <p align="center">
   <sub>Engineered with precision by <b>Zain Imran</b> • Automated telemetry &amp; security posture verified via GitHub Actions</sub>
