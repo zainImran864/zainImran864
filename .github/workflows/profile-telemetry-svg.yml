@@ -15,6 +15,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: profile-auto-commit
+  cancel-in-progress: false
+
 jobs:
   telemetry-svg:
     name: Build & Verify Profile Telemetry SVGs
@@ -60,6 +64,7 @@ jobs:
           git add assets/*.svg
           if ! git diff --staged --quiet; then
             git commit -m "chore(telemetry): regenerate profile SVG banners & metrics [skip ci]"
+            git pull --rebase origin main
             git push
           else
             echo "SVG assets are already up to date."
