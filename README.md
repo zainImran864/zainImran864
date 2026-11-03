@@ -25,22 +25,6 @@
     </a>
   </p>
 
-  <!-- LIVE AUTOMATION & POSTURE WORKFLOW BADGES -->
-  <p align="center">
-    <a href="https://github.com/zainImran864/zainImran864/actions/workflows/profile-telemetry-svg.yml">
-      <img src="https://github.com/zainImran864/zainImran864/actions/workflows/profile-telemetry-svg.yml/badge.svg" alt="Profile Telemetry & SVG Engine" />
-    </a>
-    <a href="https://github.com/zainImran864/zainImran864/actions/workflows/engineering-pulse.yml">
-      <img src="https://github.com/zainImran864/zainImran864/actions/workflows/engineering-pulse.yml/badge.svg" alt="Engineering Velocity & Pulse" />
-    </a>
-    <a href="https://github.com/zainImran864/zainImran864/actions/workflows/weekly-security-audit.yml">
-      <img src="https://github.com/zainImran864/zainImran864/actions/workflows/weekly-security-audit.yml/badge.svg" alt="Weekly Security & Exposure Audit" />
-    </a>
-    <a href="https://github.com/zainImran864/zainImran864/actions/workflows/weekly-profile-refresh.yml">
-      <img src="https://github.com/zainImran864/zainImran864/actions/workflows/weekly-profile-refresh.yml/badge.svg" alt="Weekly Profile Refresh" />
-    </a>
-  </p>
-
 </div>
 
 ---
@@ -72,8 +56,8 @@
             <td>CTEM, Attack Surface &amp; Full-Stack</td>
           </tr>
           <tr>
-            <td><b>📋 Frameworks</b></td>
-            <td><code>CIS</code> • <code>PCI DSS</code> • <code>CMMC</code></td>
+            <td><b>📋 Frameworks &amp; Stack</b></td>
+            <td><code>Python</code> • <code>React</code> • <code>Docker</code> • <code>MongoDB</code> • <code>PostgreSQL</code></td>
           </tr>
           <tr>
             <td><b>🎓 Education</b></td>
