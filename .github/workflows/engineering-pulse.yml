@@ -1,0 +1,51 @@
+name: Engineering Velocity & Pulse
+
+on:
+  schedule:
+    # Runs once a week on Sundays at 00:00 UTC
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/scripts/generate_profile_svgs.py"
+      - ".github/workflows/engineering-pulse.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-auto-commit
+  cancel-in-progress: false
+
+jobs:
+  pulse:
+    name: Generate 2D Velocity Wave & Contribution Matrix
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build 2D Activity Pulse & Wave SVGs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/generate_profile_svgs.py
+
+      - name: Commit & Push Updated Activity Pulse
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/*.svg
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(pulse): refresh 2D engineering velocity & wave assets [skip ci]"
+            git pull --rebase origin main
+            git push
+          else
+            echo "Activity pulse SVG is already up to date."
+          fi

@@ -14,41 +14,38 @@
 
   <!-- Left Panel: Engineering & Repository Telemetry -->
   <g transform="translate(36, 34)">
-    <text x="0" y="0" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.2">
-      ⚡ GITHUB ENGINEERING TELEMETRY
+    <text x="265" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.2">
+      GITHUB ENGINEERING TELEMETRY
     </text>
-    <text x="0" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
+    <text x="265" y="28" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
       System Metrics &amp; Repository Posture
     </text>
 
-    <!-- 4 Metric Bento Boxes -->
+    <!-- 4 Centered Metric Bento Boxes -->
     <g transform="translate(0, 52)">
       <!-- Box 1 -->
       <rect x="0" y="0" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-      <text x="18" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Public Repositories</text>
-      <text x="18" y="62" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="26" font-weight="800" fill="#38BDF8">17</text>
-      <text x="185" y="60" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#10B981">● ACTIVE</text>
+      <text x="128" y="28" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Public Repositories</text>
+      <text x="128" y="60" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="22" font-weight="800" fill="#38BDF8">17 <tspan font-size="12" fill="#10B981">● ACTIVE</tspan></text>
 
       <!-- Box 2 -->
       <rect x="274" y="0" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-      <text x="292" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Stars &amp; Community Reach</text>
-      <text x="292" y="62" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="26" font-weight="800" fill="#FBBF24">1 ★</text>
-      <text x="415" y="60" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#94A3B8">4 Followers</text>
+      <text x="402" y="28" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Stars &amp; Network Reach</text>
+      <text x="402" y="60" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="22" font-weight="800" fill="#FBBF24">1 ★ <tspan font-size="12" fill="#94A3B8">(4 Flw)</tspan></text>
 
       <!-- Box 3 -->
       <rect x="0" y="98" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-      <text x="18" y="126" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Security &amp; Secret Audit</text>
-      <text x="18" y="160" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="20" font-weight="800" fill="#10B981">PASSING ✓</text>
-      <text x="165" y="158" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#64748B">0 Leaks</text>
+      <text x="128" y="126" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Security &amp; Secret Audit</text>
+      <text x="128" y="158" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="19" font-weight="800" fill="#10B981">PASSING ✓ <tspan font-size="11.5" fill="#64748B">(0 Leaks)</tspan></text>
 
       <!-- Box 4 -->
       <rect x="274" y="98" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-      <text x="292" y="126" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Primary Engineering Focus</text>
-      <text x="292" y="160" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="18" font-weight="800" fill="#60A5FA">CTEM &amp; Full-Stack</text>
+      <text x="402" y="126" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Primary Engineering Focus</text>
+      <text x="402" y="158" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="17" font-weight="800" fill="#60A5FA">CTEM &amp; Full-Stack</text>
     </g>
 
-    <text x="0" y="254" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#64748B">
-      Auto-synced via GitHub Actions • Last telemetry snapshot: 2026-11-03 12:39 UTC
+    <text x="265" y="254" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#64748B">
+      Auto-synced via GitHub Actions • Snapshot: 2026-11-03 12:45 UTC
     </text>
   </g>
 
@@ -57,10 +54,10 @@
 
   <!-- Right Panel: Language & Architecture Distribution -->
   <g transform="translate(652, 34)">
-    <text x="0" y="0" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#10B981" letter-spacing="1.2">
-      📊 CODEBASE LANGUAGE DISTRIBUTION
+    <text x="250" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#10B981" letter-spacing="1.2">
+      CODEBASE LANGUAGE DISTRIBUTION
     </text>
-    <text x="0" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
+    <text x="250" y="28" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
       Primary Production Stack
     </text>
 

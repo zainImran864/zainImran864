@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%" role="img" aria-label="Zain Imran - Software Engineer &amp; CTEM Architect">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%" role="img" aria-label="Zain Imran - Software Engineer &amp; CTEM Architect">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070B14" />
-      <stop offset="50%" stop-color="#0F172A" />
-      <stop offset="100%" stop-color="#091020" />
+      <stop offset="0%" stop-color="#060A12" />
+      <stop offset="50%" stop-color="#0B1324" />
+      <stop offset="100%" stop-color="#070C18" />
     </linearGradient>
     <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38BDF8" />
@@ -12,125 +12,165 @@
     </linearGradient>
     <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="65%" stop-color="#E2E8F0" />
+      <stop offset="50%" stop-color="#F1F5F9" />
       <stop offset="100%" stop-color="#38BDF8" />
     </linearGradient>
-    <radialGradient id="glowLeft" cx="18%" cy="25%" r="45%">
-      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.18" />
-      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="glowRight" cx="85%" cy="75%" r="45%">
-      <stop offset="0%" stop-color="#10B981" stop-opacity="0.14" />
-      <stop offset="100%" stop-color="#10B981" stop-opacity="0" />
+    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.18" />
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.18" />
+    </linearGradient>
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.14" />
+    </linearGradient>
+    <linearGradient id="waveGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.10" />
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.08" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="42%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
     </radialGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.7" stroke-opacity="0.55" />
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.6" stroke-opacity="0.45" />
     </pattern>
+    <clipPath id="bannerClip">
+      <rect width="1200" height="380" rx="18" />
+    </clipPath>
   </defs>
 
-  <!-- Main Card Frame -->
-  <rect width="1200" height="320" rx="18" fill="url(#bgGrad)" />
-  <rect width="1200" height="320" rx="18" fill="url(#grid)" />
-  <rect width="1200" height="320" rx="18" fill="url(#glowLeft)" />
-  <rect width="1200" height="320" rx="18" fill="url(#glowRight)" />
-  <rect x="1" y="1" width="1198" height="318" rx="17" fill="none" stroke="#1E293B" stroke-width="1.5" />
+  <g clip-path="url(#bannerClip)">
+    <!-- Background Base & Grid -->
+    <rect width="1200" height="380" fill="url(#bgGrad)" />
+    <rect width="1200" height="380" fill="url(#grid)" />
+    <rect width="1200" height="380" fill="url(#centerGlow)" />
 
-  <!-- Top Accent Line -->
-  <rect x="0" y="0" width="1200" height="4" rx="2" fill="url(#accentGrad)" />
+    <!-- Animated Flowing Wave Layer 1 (Deep Background Wave) -->
+    <path fill="url(#waveGrad3)" d="M 0 250 Q 300 190 600 250 T 1200 250 L 1200 380 L 0 380 Z">
+      <animate attributeName="d" dur="11s" repeatCount="indefinite"
+        values="
+          M 0 250 Q 300 190 600 250 T 1200 250 L 1200 380 L 0 380 Z;
+          M 0 250 Q 300 310 600 250 T 1200 250 L 1200 380 L 0 380 Z;
+          M 0 250 Q 300 190 600 250 T 1200 250 L 1200 380 L 0 380 Z" />
+    </path>
 
-  <!-- Top Bar / Terminal Telemetry Header -->
-  <g transform="translate(48, 34)">
-    <circle cx="8" cy="8" r="5.5" fill="#EF4444" />
-    <circle cx="26" cy="8" r="5.5" fill="#F59E0B" />
-    <circle cx="44" cy="8" r="5.5" fill="#10B981" />
-    <text x="68" y="12.5" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" fill="#64748B" letter-spacing="0.5">
-      zain-imran@cybersilo:~/systems-architecture $ <tspan fill="#38BDF8">status --posture=verified</tspan>
-    </text>
+    <!-- Animated Flowing Wave Layer 2 (Mid Cyan/Emerald Wave) -->
+    <path fill="url(#waveGrad2)" d="M 0 275 Q 300 330 600 275 T 1200 275 L 1200 380 L 0 380 Z">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite"
+        values="
+          M 0 275 Q 300 330 600 275 T 1200 275 L 1200 380 L 0 380 Z;
+          M 0 275 Q 300 215 600 275 T 1200 275 L 1200 380 L 0 380 Z;
+          M 0 275 Q 300 330 600 275 T 1200 275 L 1200 380 L 0 380 Z" />
+    </path>
+
+    <!-- Animated Flowing Wave Layer 3 (Foreground Glowing Crest Wave) -->
+    <path fill="url(#waveGrad1)" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.35" d="M 0 305 Q 300 255 600 305 T 1200 305 L 1200 380 L 0 380 Z">
+      <animate attributeName="d" dur="6.5s" repeatCount="indefinite"
+        values="
+          M 0 305 Q 300 255 600 305 T 1200 305 L 1200 380 L 0 380 Z;
+          M 0 305 Q 300 350 600 305 T 1200 305 L 1200 380 L 0 380 Z;
+          M 0 305 Q 300 255 600 305 T 1200 305 L 1200 380 L 0 380 Z" />
+    </path>
+
+    <!-- Subtle Upper Wave Ribbon -->
+    <path fill="none" stroke="url(#accentGrad)" stroke-width="1.2" stroke-opacity="0.22" d="M 0 95 Q 300 55 600 95 T 1200 95">
+      <animate attributeName="d" dur="9s" repeatCount="indefinite"
+        values="
+          M 0 95 Q 300 55 600 95 T 1200 95;
+          M 0 95 Q 300 135 600 95 T 1200 95;
+          M 0 95 Q 300 55 600 95 T 1200 95" />
+    </path>
+
+    <!-- Top Accent Line -->
+    <rect x="0" y="0" width="1200" height="4" fill="url(#accentGrad)" />
   </g>
 
-  <!-- Live Operational Pill (Top Right) -->
-  <g transform="translate(916, 24)">
-    <rect width="236" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
-    <circle cx="18" cy="14" r="4.5" fill="#10B981">
-      <animate attributeName="opacity" values="1;0.35;1" dur="2.2s" repeatCount="indefinite" />
+  <!-- Outer Border -->
+  <rect x="1" y="1" width="1198" height="378" rx="17" fill="none" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Top Centered Status Pill -->
+  <g transform="translate(410, 26)">
+    <rect width="380" height="30" rx="15" fill="#0B1324" fill-opacity="0.9" stroke="#1E3A5F" stroke-width="1.2" />
+    <circle cx="24" cy="15" r="4.5" fill="#10B981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
     </circle>
-    <text x="32" y="18" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0" letter-spacing="0.8">
-      SYSTEMS ONLINE • CTEM
+    <text x="200" y="19.5" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="600" fill="#E2E8F0" letter-spacing="0.8">
+      SYSTEMS ONLINE  •  CTEM &amp; FULL-STACK
     </text>
   </g>
 
-  <!-- Main Headline & Identity -->
-  <g transform="translate(48, 114)">
-    <text x="0" y="0" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="46" font-weight="800" fill="url(#textGrad)" letter-spacing="-0.8">
+  <!-- Centered Main Headline & Identity -->
+  <g transform="translate(600, 118)">
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="50" font-weight="800" fill="url(#textGrad)" letter-spacing="-0.8">
       Zain Imran
     </text>
-    <text x="0" y="38" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#38BDF8" letter-spacing="0.2">
+    <text x="0" y="40" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19.5" font-weight="600" fill="#38BDF8" letter-spacing="0.3">
       Software Engineer  •  Full-Stack Architecture &amp; CTEM Security Engineering
     </text>
-    <text x="0" y="70" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14.5" fill="#94A3B8">
-      Architecting continuous threat exposure management at <tspan fill="#F8FAFC" font-weight="600">Cybersilo</tspan> &amp; shipping resilient full-stack web systems.
+    <text x="0" y="72" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14.5" fill="#CBD5E1">
+      Architecting continuous threat exposure management at <tspan fill="#FFFFFF" font-weight="700">Cybersilo</tspan> &amp; shipping resilient full-stack web systems.
     </text>
   </g>
 
-  <!-- Bottom Capability Badges -->
-  <g transform="translate(48, 232)">
-    <!-- Badge 1 -->
-    <g transform="translate(0, 0)">
-      <rect width="250" height="36" rx="8" fill="#111C33" stroke="#1E3A5F" stroke-width="1" />
-      <text x="16" y="23" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" fill="#38BDF8">
-        🛡️ CTEM • CIS • PCI DSS • CMMC
+  <!-- Centered 3 Capability Pills (Generous Width + Middle Text Anchor so text never clips) -->
+  <g transform="translate(0, 224)">
+    <!-- Pill 1: Left (x=105, width=310, center=155) -->
+    <g transform="translate(105, 0)">
+      <rect width="310" height="38" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+      <text x="155" y="24" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600" fill="#38BDF8">
+        CTEM • CIS • PCI DSS • CMMC
       </text>
     </g>
-    <!-- Badge 2 -->
-    <g transform="translate(264, 0)">
-      <rect width="286" height="36" rx="8" fill="#111C33" stroke="#1E3A5F" stroke-width="1" />
-      <text x="16" y="23" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" fill="#60A5FA">
-        ⚡ Next.js • React • FastAPI • Node
+
+    <!-- Pill 2: Center (x=445, width=310, center=155) -->
+    <g transform="translate(445, 0)">
+      <rect width="310" height="38" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+      <text x="155" y="24" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600" fill="#60A5FA">
+        Next.js • React • FastAPI • Node
       </text>
     </g>
-    <!-- Badge 3 -->
-    <g transform="translate(564, 0)">
-      <rect width="236" height="36" rx="8" fill="#111C33" stroke="#1E3A5F" stroke-width="1" />
-      <text x="16" y="23" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" fill="#34D399">
-        🔒 TypeScript • Python • Docker
+
+    <!-- Pill 3: Right (x=785, width=310, center=155) -->
+    <g transform="translate(785, 0)">
+      <rect width="310" height="38" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+      <text x="155" y="24" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600" fill="#34D399">
+        TypeScript • Python • Docker
       </text>
     </g>
   </g>
 
-  <!-- Right-side Decorative Cyber Architecture Node Graphic -->
-  <g transform="translate(915, 86)">
-    <rect x="0" y="0" width="236" height="182" rx="12" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-    <text x="18" y="28" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1">
-      ARCHITECTURE POSTURE
-    </text>
-    <line x1="18" y1="38" x2="218" y2="38" stroke="#1E293B" stroke-width="1" />
+  <!-- Centered Bottom Architecture Posture Telemetry Strip -->
+  <g transform="translate(105, 290)">
+    <rect width="990" height="58" rx="12" fill="#080F1E" fill-opacity="0.88" stroke="#1E293B" stroke-width="1.2" />
 
-    <text x="18" y="64" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
-      Surface Discovery
-    </text>
-    <text x="178" y="64" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#10B981">
-      ACTIVE
-    </text>
+    <!-- Metric 1 -->
+    <g transform="translate(124, 24)">
+      <text x="0" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="10.5" fill="#94A3B8" letter-spacing="0.8">SURFACE DISCOVERY</text>
+      <text x="0" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="700" fill="#10B981">● ACTIVE</text>
+    </g>
+    <line x1="247" y1="12" x2="247" y2="46" stroke="#1E293B" stroke-width="1" />
 
-    <text x="18" y="94" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
-      API Type Safety
-    </text>
-    <text x="178" y="94" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8">
-      STRICT
-    </text>
+    <!-- Metric 2 -->
+    <g transform="translate(371, 24)">
+      <text x="0" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="10.5" fill="#94A3B8" letter-spacing="0.8">API TYPE SAFETY</text>
+      <text x="0" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="700" fill="#38BDF8">◆ STRICT</text>
+    </g>
+    <line x1="495" y1="12" x2="495" y2="46" stroke="#1E293B" stroke-width="1" />
 
-    <text x="18" y="124" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
-      Compliance Engine
-    </text>
-    <text x="164" y="124" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#60A5FA">
-      CIS/CMMC
-    </text>
+    <!-- Metric 3 -->
+    <g transform="translate(618, 24)">
+      <text x="0" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="10.5" fill="#94A3B8" letter-spacing="0.8">COMPLIANCE ENGINE</text>
+      <text x="0" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="700" fill="#60A5FA">★ CIS / CMMC</text>
+    </g>
+    <line x1="742" y1="12" x2="742" y2="46" stroke="#1E293B" stroke-width="1" />
 
-    <text x="18" y="154" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
-      CI/CD Audits
-    </text>
-    <text x="164" y="154" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#A78BFA">
-      VERIFIED
-    </text>
+    <!-- Metric 4 -->
+    <g transform="translate(866, 24)">
+      <text x="0" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="10.5" fill="#94A3B8" letter-spacing="0.8">CI/CD AUDITS</text>
+      <text x="0" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="700" fill="#A78BFA">✓ VERIFIED</text>
+    </g>
   </g>
 </svg>

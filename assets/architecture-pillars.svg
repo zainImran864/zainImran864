@@ -4,34 +4,50 @@
       <stop offset="0%" stop-color="#0F172A" />
       <stop offset="100%" stop-color="#090F1C" />
     </linearGradient>
+    <linearGradient id="pillarWave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.08" />
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.08" />
+    </linearGradient>
+    <clipPath id="pillarsClip">
+      <rect width="1200" height="280" rx="16" />
+    </clipPath>
   </defs>
 
-  <!-- Background container -->
-  <rect width="1200" height="280" rx="16" fill="#070B14" />
+  <g clip-path="url(#pillarsClip)">
+    <rect width="1200" height="280" fill="#070B14" />
+    <path fill="url(#pillarWave)" d="M 0 220 Q 300 185 600 220 T 1200 220 L 1200 280 L 0 280 Z">
+      <animate attributeName="d" dur="9s" repeatCount="indefinite"
+        values="
+          M 0 220 Q 300 185 600 220 T 1200 220 L 1200 280 L 0 280 Z;
+          M 0 220 Q 300 255 600 220 T 1200 220 L 1200 280 L 0 280 Z;
+          M 0 220 Q 300 185 600 220 T 1200 220 L 1200 280 L 0 280 Z" />
+    </path>
+  </g>
   <rect x="1" y="1" width="1198" height="278" rx="15" fill="none" stroke="#1E293B" stroke-width="1.5" />
 
   <!-- Pillar 1: Defensive Engineering & CTEM -->
   <g transform="translate(24, 24)">
     <rect width="364" height="232" rx="12" fill="url(#cardBg)" stroke="#1E293B" stroke-width="1.2" />
     <rect x="0" y="0" width="364" height="4" rx="2" fill="#EF4444" />
-    <text x="24" y="38" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#F87171" letter-spacing="1.2">
-      01 // DEFENSIVE ENGINEERING &amp; CTEM
+    <text x="182" y="36" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#F87171" letter-spacing="1">
+      01 // DEFENSIVE ENGINEERING
     </text>
-    <text x="24" y="68" font-family="'Inter', -apple-system, sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">
+    <text x="182" y="66" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="17.5" font-weight="700" fill="#F8FAFC">
       Threat Exposure Management
     </text>
-    <line x1="24" y1="84" x2="340" y2="84" stroke="#1E293B" stroke-width="1" />
-    <text x="24" y="114" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#F87171" font-weight="700">▸</tspan> Automated attack surface discovery
+    <line x1="28" y1="84" x2="336" y2="84" stroke="#1E293B" stroke-width="1" />
+    <text x="182" y="114" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Automated attack surface discovery
     </text>
-    <text x="24" y="142" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#F87171" font-weight="700">▸</tspan> CIS Controls, PCI DSS &amp; CMMC mapping
+    <text x="182" y="142" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      CIS Controls, PCI DSS &amp; CMMC mapping
     </text>
-    <text x="24" y="170" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#F87171" font-weight="700">▸</tspan> Risk-based vulnerability prioritization
+    <text x="182" y="170" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Risk-based vulnerability prioritization
     </text>
-    <text x="24" y="198" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#F87171" font-weight="700">▸</tspan> Zero-Trust &amp; least-privilege architecture
+    <text x="182" y="198" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Zero-Trust &amp; least-privilege architecture
     </text>
   </g>
 
@@ -45,24 +61,24 @@
   <g transform="translate(418, 24)">
     <rect width="364" height="232" rx="12" fill="url(#cardBg)" stroke="#1E293B" stroke-width="1.2" />
     <rect x="0" y="0" width="364" height="4" rx="2" fill="#3B82F6" />
-    <text x="24" y="38" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#60A5FA" letter-spacing="1.2">
+    <text x="182" y="36" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#60A5FA" letter-spacing="1">
       02 // FULL-STACK CRAFTSMANSHIP
     </text>
-    <text x="24" y="68" font-family="'Inter', -apple-system, sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">
+    <text x="182" y="66" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="17.5" font-weight="700" fill="#F8FAFC">
       Scalable Web &amp; API Systems
     </text>
-    <line x1="24" y1="84" x2="340" y2="84" stroke="#1E293B" stroke-width="1" />
-    <text x="24" y="114" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#60A5FA" font-weight="700">▸</tspan> Type-safe Next.js, React &amp; Tailwind UIs
+    <line x1="28" y1="84" x2="336" y2="84" stroke="#1E293B" stroke-width="1" />
+    <text x="182" y="114" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Type-safe Next.js, React &amp; Tailwind UIs
     </text>
-    <text x="24" y="142" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#60A5FA" font-weight="700">▸</tspan> High-throughput FastAPI &amp; Node.js APIs
+    <text x="182" y="142" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      High-throughput FastAPI &amp; Node.js APIs
     </text>
-    <text x="24" y="170" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#60A5FA" font-weight="700">▸</tspan> PostgreSQL, MySQL, MongoDB &amp; Supabase
+    <text x="182" y="170" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      PostgreSQL, MySQL, MongoDB &amp; Supabase
     </text>
-    <text x="24" y="198" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#60A5FA" font-weight="700">▸</tspan> Clean domain boundaries &amp; REST contracts
+    <text x="182" y="198" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Clean domain boundaries &amp; REST contracts
     </text>
   </g>
 
@@ -76,24 +92,24 @@
   <g transform="translate(812, 24)">
     <rect width="364" height="232" rx="12" fill="url(#cardBg)" stroke="#1E293B" stroke-width="1.2" />
     <rect x="0" y="0" width="364" height="4" rx="2" fill="#10B981" />
-    <text x="24" y="38" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#34D399" letter-spacing="1.2">
+    <text x="182" y="36" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#34D399" letter-spacing="1">
       03 // DEVSECOPS &amp; AUTOMATION
     </text>
-    <text x="24" y="68" font-family="'Inter', -apple-system, sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">
+    <text x="182" y="66" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="17.5" font-weight="700" fill="#F8FAFC">
       Resilient Delivery Pipelines
     </text>
-    <line x1="24" y1="84" x2="340" y2="84" stroke="#1E293B" stroke-width="1" />
-    <text x="24" y="114" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#34D399" font-weight="700">▸</tspan> Automated GitHub Actions CI/CD workflows
+    <line x1="28" y1="84" x2="336" y2="84" stroke="#1E293B" stroke-width="1" />
+    <text x="182" y="114" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Automated GitHub Actions CI/CD workflows
     </text>
-    <text x="24" y="142" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#34D399" font-weight="700">▸</tspan> Containerized Docker &amp; Linux workloads
+    <text x="182" y="142" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Containerized Docker &amp; Linux workloads
     </text>
-    <text x="24" y="170" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#34D399" font-weight="700">▸</tspan> Scheduled secret &amp; exposure auditing
+    <text x="182" y="170" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Scheduled secret &amp; exposure auditing
     </text>
-    <text x="24" y="198" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#34D399" font-weight="700">▸</tspan> Deterministic builds &amp; edge deployments
+    <text x="182" y="198" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Deterministic builds &amp; edge deployments
     </text>
   </g>
 </svg>

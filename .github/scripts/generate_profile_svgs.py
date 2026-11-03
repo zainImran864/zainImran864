@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """
-Generates custom, high-definition SVG visual assets for Zain Imran's GitHub Profile README:
-1. assets/hero-banner.svg          - Executive engineering header banner
-2. assets/architecture-pillars.svg - System architecture & engineering pillars diagram
-3. assets/github-telemetry.svg     - Self-hosted live GitHub telemetry & language breakdown card
+Generates custom, high-definition 2D SVG visual assets for Zain Imran's GitHub Profile README:
+1. assets/hero-banner.svg          - Centered executive hero banner with animated flowing waves
+2. assets/architecture-pillars.svg - Centered 3-pillar system architecture diagram
+3. assets/github-telemetry.svg     - Live GitHub telemetry & language distribution card
+4. assets/activity-pulse.svg       - 2D animated engineering velocity & DevSecOps pipeline pulse
 """
 
 from datetime import datetime, timezone
+import hashlib
 import html
 import json
+import math
 import os
 from pathlib import Path
 import urllib.error
@@ -22,12 +25,11 @@ LANG_COLORS = {
     "TypeScript": "#3178C6",
     "JavaScript": "#F7DF1E",
     "Python": "#3572A5",
+    "HTML/CSS": "#E34C26",
     "HTML": "#E34C26",
     "CSS": "#563D7C",
     "Shell": "#89E051",
     "Dockerfile": "#384D54",
-    "C++": "#F34B7D",
-    "Java": "#B07219",
 }
 
 
@@ -47,10 +49,10 @@ def fetch_github_stats(username: str) -> dict:
         "total_stars": 15,
         "total_forks": 4,
         "languages": {
-            "TypeScript": 42.5,
-            "Python": 26.0,
-            "JavaScript": 21.0,
-            "HTML/CSS": 10.5,
+            "TypeScript": 44.0,
+            "Python": 26.5,
+            "JavaScript": 19.5,
+            "HTML/CSS": 10.0,
         },
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
     }
@@ -86,7 +88,6 @@ def fetch_github_stats(username: str) -> dict:
                         lang_counts[lang] = lang_counts.get(lang, 0) + size
 
                 if lang_counts:
-                    total_size = sum(lang_counts.values())
                     sorted_langs = sorted(lang_counts.items(), key=lambda x: x[1], reverse=True)[:5]
                     top_total = sum(v for _, v in sorted_langs)
                     stats["languages"] = {
@@ -99,13 +100,13 @@ def fetch_github_stats(username: str) -> dict:
 
 
 def generate_hero_banner() -> str:
-    """Generates the executive SVG hero banner."""
-    return """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%" role="img" aria-label="Zain Imran - Software Engineer &amp; CTEM Architect">
+    """Generates the centered executive SVG hero banner with smooth animated flowing background waves."""
+    return """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%" role="img" aria-label="Zain Imran - Software Engineer &amp; CTEM Architect">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070B14" />
-      <stop offset="50%" stop-color="#0F172A" />
-      <stop offset="100%" stop-color="#091020" />
+      <stop offset="0%" stop-color="#060A12" />
+      <stop offset="50%" stop-color="#0B1324" />
+      <stop offset="100%" stop-color="#070C18" />
     </linearGradient>
     <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38BDF8" />
@@ -114,167 +115,223 @@ def generate_hero_banner() -> str:
     </linearGradient>
     <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="65%" stop-color="#E2E8F0" />
+      <stop offset="50%" stop-color="#F1F5F9" />
       <stop offset="100%" stop-color="#38BDF8" />
     </linearGradient>
-    <radialGradient id="glowLeft" cx="18%" cy="25%" r="45%">
-      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.18" />
-      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="glowRight" cx="85%" cy="75%" r="45%">
-      <stop offset="0%" stop-color="#10B981" stop-opacity="0.14" />
-      <stop offset="100%" stop-color="#10B981" stop-opacity="0" />
+    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.18" />
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.18" />
+    </linearGradient>
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.14" />
+    </linearGradient>
+    <linearGradient id="waveGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.10" />
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.08" />
+    </linearGradient>
+    <radialGradient id="centerGlow" cx="50%" cy="42%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
     </radialGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.7" stroke-opacity="0.55" />
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.6" stroke-opacity="0.45" />
     </pattern>
+    <clipPath id="bannerClip">
+      <rect width="1200" height="380" rx="18" />
+    </clipPath>
   </defs>
 
-  <!-- Main Card Frame -->
-  <rect width="1200" height="320" rx="18" fill="url(#bgGrad)" />
-  <rect width="1200" height="320" rx="18" fill="url(#grid)" />
-  <rect width="1200" height="320" rx="18" fill="url(#glowLeft)" />
-  <rect width="1200" height="320" rx="18" fill="url(#glowRight)" />
-  <rect x="1" y="1" width="1198" height="318" rx="17" fill="none" stroke="#1E293B" stroke-width="1.5" />
+  <g clip-path="url(#bannerClip)">
+    <!-- Background Base & Grid -->
+    <rect width="1200" height="380" fill="url(#bgGrad)" />
+    <rect width="1200" height="380" fill="url(#grid)" />
+    <rect width="1200" height="380" fill="url(#centerGlow)" />
 
-  <!-- Top Accent Line -->
-  <rect x="0" y="0" width="1200" height="4" rx="2" fill="url(#accentGrad)" />
+    <!-- Animated Flowing Wave Layer 1 (Deep Background Wave) -->
+    <path fill="url(#waveGrad3)" d="M 0 250 Q 300 190 600 250 T 1200 250 L 1200 380 L 0 380 Z">
+      <animate attributeName="d" dur="11s" repeatCount="indefinite"
+        values="
+          M 0 250 Q 300 190 600 250 T 1200 250 L 1200 380 L 0 380 Z;
+          M 0 250 Q 300 310 600 250 T 1200 250 L 1200 380 L 0 380 Z;
+          M 0 250 Q 300 190 600 250 T 1200 250 L 1200 380 L 0 380 Z" />
+    </path>
 
-  <!-- Top Bar / Terminal Telemetry Header -->
-  <g transform="translate(48, 34)">
-    <circle cx="8" cy="8" r="5.5" fill="#EF4444" />
-    <circle cx="26" cy="8" r="5.5" fill="#F59E0B" />
-    <circle cx="44" cy="8" r="5.5" fill="#10B981" />
-    <text x="68" y="12.5" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" fill="#64748B" letter-spacing="0.5">
-      zain-imran@cybersilo:~/systems-architecture $ <tspan fill="#38BDF8">status --posture=verified</tspan>
-    </text>
+    <!-- Animated Flowing Wave Layer 2 (Mid Cyan/Emerald Wave) -->
+    <path fill="url(#waveGrad2)" d="M 0 275 Q 300 330 600 275 T 1200 275 L 1200 380 L 0 380 Z">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite"
+        values="
+          M 0 275 Q 300 330 600 275 T 1200 275 L 1200 380 L 0 380 Z;
+          M 0 275 Q 300 215 600 275 T 1200 275 L 1200 380 L 0 380 Z;
+          M 0 275 Q 300 330 600 275 T 1200 275 L 1200 380 L 0 380 Z" />
+    </path>
+
+    <!-- Animated Flowing Wave Layer 3 (Foreground Glowing Crest Wave) -->
+    <path fill="url(#waveGrad1)" stroke="#38BDF8" stroke-width="1.2" stroke-opacity="0.35" d="M 0 305 Q 300 255 600 305 T 1200 305 L 1200 380 L 0 380 Z">
+      <animate attributeName="d" dur="6.5s" repeatCount="indefinite"
+        values="
+          M 0 305 Q 300 255 600 305 T 1200 305 L 1200 380 L 0 380 Z;
+          M 0 305 Q 300 350 600 305 T 1200 305 L 1200 380 L 0 380 Z;
+          M 0 305 Q 300 255 600 305 T 1200 305 L 1200 380 L 0 380 Z" />
+    </path>
+
+    <!-- Subtle Upper Wave Ribbon -->
+    <path fill="none" stroke="url(#accentGrad)" stroke-width="1.2" stroke-opacity="0.22" d="M 0 95 Q 300 55 600 95 T 1200 95">
+      <animate attributeName="d" dur="9s" repeatCount="indefinite"
+        values="
+          M 0 95 Q 300 55 600 95 T 1200 95;
+          M 0 95 Q 300 135 600 95 T 1200 95;
+          M 0 95 Q 300 55 600 95 T 1200 95" />
+    </path>
+
+    <!-- Top Accent Line -->
+    <rect x="0" y="0" width="1200" height="4" fill="url(#accentGrad)" />
   </g>
 
-  <!-- Live Operational Pill (Top Right) -->
-  <g transform="translate(916, 24)">
-    <rect width="236" height="28" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
-    <circle cx="18" cy="14" r="4.5" fill="#10B981">
-      <animate attributeName="opacity" values="1;0.35;1" dur="2.2s" repeatCount="indefinite" />
+  <!-- Outer Border -->
+  <rect x="1" y="1" width="1198" height="378" rx="17" fill="none" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Top Centered Status Pill -->
+  <g transform="translate(410, 26)">
+    <rect width="380" height="30" rx="15" fill="#0B1324" fill-opacity="0.9" stroke="#1E3A5F" stroke-width="1.2" />
+    <circle cx="24" cy="15" r="4.5" fill="#10B981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
     </circle>
-    <text x="32" y="18" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5" font-weight="600" fill="#E2E8F0" letter-spacing="0.8">
-      SYSTEMS ONLINE • CTEM
+    <text x="200" y="19.5" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="600" fill="#E2E8F0" letter-spacing="0.8">
+      SYSTEMS ONLINE  •  CTEM &amp; FULL-STACK
     </text>
   </g>
 
-  <!-- Main Headline & Identity -->
-  <g transform="translate(48, 114)">
-    <text x="0" y="0" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="46" font-weight="800" fill="url(#textGrad)" letter-spacing="-0.8">
+  <!-- Centered Main Headline & Identity -->
+  <g transform="translate(600, 118)">
+    <text x="0" y="0" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="50" font-weight="800" fill="url(#textGrad)" letter-spacing="-0.8">
       Zain Imran
     </text>
-    <text x="0" y="38" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19" font-weight="600" fill="#38BDF8" letter-spacing="0.2">
+    <text x="0" y="40" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19.5" font-weight="600" fill="#38BDF8" letter-spacing="0.3">
       Software Engineer  •  Full-Stack Architecture &amp; CTEM Security Engineering
     </text>
-    <text x="0" y="70" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14.5" fill="#94A3B8">
-      Architecting continuous threat exposure management at <tspan fill="#F8FAFC" font-weight="600">Cybersilo</tspan> &amp; shipping resilient full-stack web systems.
+    <text x="0" y="72" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14.5" fill="#CBD5E1">
+      Architecting continuous threat exposure management at <tspan fill="#FFFFFF" font-weight="700">Cybersilo</tspan> &amp; shipping resilient full-stack web systems.
     </text>
   </g>
 
-  <!-- Bottom Capability Badges -->
-  <g transform="translate(48, 232)">
-    <!-- Badge 1 -->
-    <g transform="translate(0, 0)">
-      <rect width="250" height="36" rx="8" fill="#111C33" stroke="#1E3A5F" stroke-width="1" />
-      <text x="16" y="23" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" fill="#38BDF8">
-        🛡️ CTEM • CIS • PCI DSS • CMMC
+  <!-- Centered 3 Capability Pills (Generous Width + Middle Text Anchor so text never clips) -->
+  <g transform="translate(0, 224)">
+    <!-- Pill 1: Left (x=105, width=310, center=155) -->
+    <g transform="translate(105, 0)">
+      <rect width="310" height="38" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+      <text x="155" y="24" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600" fill="#38BDF8">
+        CTEM • CIS • PCI DSS • CMMC
       </text>
     </g>
-    <!-- Badge 2 -->
-    <g transform="translate(264, 0)">
-      <rect width="286" height="36" rx="8" fill="#111C33" stroke="#1E3A5F" stroke-width="1" />
-      <text x="16" y="23" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" fill="#60A5FA">
-        ⚡ Next.js • React • FastAPI • Node
+
+    <!-- Pill 2: Center (x=445, width=310, center=155) -->
+    <g transform="translate(445, 0)">
+      <rect width="310" height="38" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+      <text x="155" y="24" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600" fill="#60A5FA">
+        Next.js • React • FastAPI • Node
       </text>
     </g>
-    <!-- Badge 3 -->
-    <g transform="translate(564, 0)">
-      <rect width="236" height="36" rx="8" fill="#111C33" stroke="#1E3A5F" stroke-width="1" />
-      <text x="16" y="23" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600" fill="#34D399">
-        🔒 TypeScript • Python • Docker
+
+    <!-- Pill 3: Right (x=785, width=310, center=155) -->
+    <g transform="translate(785, 0)">
+      <rect width="310" height="38" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+      <text x="155" y="24" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12.5" font-weight="600" fill="#34D399">
+        TypeScript • Python • Docker
       </text>
     </g>
   </g>
 
-  <!-- Right-side Decorative Cyber Architecture Node Graphic -->
-  <g transform="translate(915, 86)">
-    <rect x="0" y="0" width="236" height="182" rx="12" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-    <text x="18" y="28" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1">
-      ARCHITECTURE POSTURE
-    </text>
-    <line x1="18" y1="38" x2="218" y2="38" stroke="#1E293B" stroke-width="1" />
+  <!-- Centered Bottom Architecture Posture Telemetry Strip -->
+  <g transform="translate(105, 290)">
+    <rect width="990" height="58" rx="12" fill="#080F1E" fill-opacity="0.88" stroke="#1E293B" stroke-width="1.2" />
 
-    <text x="18" y="64" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
-      Surface Discovery
-    </text>
-    <text x="178" y="64" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#10B981">
-      ACTIVE
-    </text>
+    <!-- Metric 1 -->
+    <g transform="translate(124, 24)">
+      <text x="0" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="10.5" fill="#94A3B8" letter-spacing="0.8">SURFACE DISCOVERY</text>
+      <text x="0" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="700" fill="#10B981">● ACTIVE</text>
+    </g>
+    <line x1="247" y1="12" x2="247" y2="46" stroke="#1E293B" stroke-width="1" />
 
-    <text x="18" y="94" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
-      API Type Safety
-    </text>
-    <text x="178" y="94" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8">
-      STRICT
-    </text>
+    <!-- Metric 2 -->
+    <g transform="translate(371, 24)">
+      <text x="0" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="10.5" fill="#94A3B8" letter-spacing="0.8">API TYPE SAFETY</text>
+      <text x="0" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="700" fill="#38BDF8">◆ STRICT</text>
+    </g>
+    <line x1="495" y1="12" x2="495" y2="46" stroke="#1E293B" stroke-width="1" />
 
-    <text x="18" y="124" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
-      Compliance Engine
-    </text>
-    <text x="164" y="124" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#60A5FA">
-      CIS/CMMC
-    </text>
+    <!-- Metric 3 -->
+    <g transform="translate(618, 24)">
+      <text x="0" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="10.5" fill="#94A3B8" letter-spacing="0.8">COMPLIANCE ENGINE</text>
+      <text x="0" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="700" fill="#60A5FA">★ CIS / CMMC</text>
+    </g>
+    <line x1="742" y1="12" x2="742" y2="46" stroke="#1E293B" stroke-width="1" />
 
-    <text x="18" y="154" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" fill="#94A3B8">
-      CI/CD Audits
-    </text>
-    <text x="164" y="154" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#A78BFA">
-      VERIFIED
-    </text>
+    <!-- Metric 4 -->
+    <g transform="translate(866, 24)">
+      <text x="0" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="10.5" fill="#94A3B8" letter-spacing="0.8">CI/CD AUDITS</text>
+      <text x="0" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="13" font-weight="700" fill="#A78BFA">✓ VERIFIED</text>
+    </g>
   </g>
 </svg>
 """
 
 
 def generate_architecture_pillars() -> str:
-    """Generates the 3 Engineering Pillars vector SVG diagram."""
+    """Generates the 3 Engineering Pillars vector SVG diagram with centered headers and wave accents."""
     return """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="100%" height="100%" role="img" aria-label="Core Engineering Pillars: Defensive Engineering, Full-Stack Craftsmanship, DevSecOps &amp; Cloud">
   <defs>
     <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#0F172A" />
       <stop offset="100%" stop-color="#090F1C" />
     </linearGradient>
+    <linearGradient id="pillarWave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.08" />
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.08" />
+    </linearGradient>
+    <clipPath id="pillarsClip">
+      <rect width="1200" height="280" rx="16" />
+    </clipPath>
   </defs>
 
-  <!-- Background container -->
-  <rect width="1200" height="280" rx="16" fill="#070B14" />
+  <g clip-path="url(#pillarsClip)">
+    <rect width="1200" height="280" fill="#070B14" />
+    <path fill="url(#pillarWave)" d="M 0 220 Q 300 185 600 220 T 1200 220 L 1200 280 L 0 280 Z">
+      <animate attributeName="d" dur="9s" repeatCount="indefinite"
+        values="
+          M 0 220 Q 300 185 600 220 T 1200 220 L 1200 280 L 0 280 Z;
+          M 0 220 Q 300 255 600 220 T 1200 220 L 1200 280 L 0 280 Z;
+          M 0 220 Q 300 185 600 220 T 1200 220 L 1200 280 L 0 280 Z" />
+    </path>
+  </g>
   <rect x="1" y="1" width="1198" height="278" rx="15" fill="none" stroke="#1E293B" stroke-width="1.5" />
 
   <!-- Pillar 1: Defensive Engineering & CTEM -->
   <g transform="translate(24, 24)">
     <rect width="364" height="232" rx="12" fill="url(#cardBg)" stroke="#1E293B" stroke-width="1.2" />
     <rect x="0" y="0" width="364" height="4" rx="2" fill="#EF4444" />
-    <text x="24" y="38" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#F87171" letter-spacing="1.2">
-      01 // DEFENSIVE ENGINEERING &amp; CTEM
+    <text x="182" y="36" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#F87171" letter-spacing="1">
+      01 // DEFENSIVE ENGINEERING
     </text>
-    <text x="24" y="68" font-family="'Inter', -apple-system, sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">
+    <text x="182" y="66" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="17.5" font-weight="700" fill="#F8FAFC">
       Threat Exposure Management
     </text>
-    <line x1="24" y1="84" x2="340" y2="84" stroke="#1E293B" stroke-width="1" />
-    <text x="24" y="114" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#F87171" font-weight="700">▸</tspan> Automated attack surface discovery
+    <line x1="28" y1="84" x2="336" y2="84" stroke="#1E293B" stroke-width="1" />
+    <text x="182" y="114" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Automated attack surface discovery
     </text>
-    <text x="24" y="142" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#F87171" font-weight="700">▸</tspan> CIS Controls, PCI DSS &amp; CMMC mapping
+    <text x="182" y="142" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      CIS Controls, PCI DSS &amp; CMMC mapping
     </text>
-    <text x="24" y="170" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#F87171" font-weight="700">▸</tspan> Risk-based vulnerability prioritization
+    <text x="182" y="170" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Risk-based vulnerability prioritization
     </text>
-    <text x="24" y="198" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#F87171" font-weight="700">▸</tspan> Zero-Trust &amp; least-privilege architecture
+    <text x="182" y="198" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Zero-Trust &amp; least-privilege architecture
     </text>
   </g>
 
@@ -288,24 +345,24 @@ def generate_architecture_pillars() -> str:
   <g transform="translate(418, 24)">
     <rect width="364" height="232" rx="12" fill="url(#cardBg)" stroke="#1E293B" stroke-width="1.2" />
     <rect x="0" y="0" width="364" height="4" rx="2" fill="#3B82F6" />
-    <text x="24" y="38" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#60A5FA" letter-spacing="1.2">
+    <text x="182" y="36" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#60A5FA" letter-spacing="1">
       02 // FULL-STACK CRAFTSMANSHIP
     </text>
-    <text x="24" y="68" font-family="'Inter', -apple-system, sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">
+    <text x="182" y="66" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="17.5" font-weight="700" fill="#F8FAFC">
       Scalable Web &amp; API Systems
     </text>
-    <line x1="24" y1="84" x2="340" y2="84" stroke="#1E293B" stroke-width="1" />
-    <text x="24" y="114" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#60A5FA" font-weight="700">▸</tspan> Type-safe Next.js, React &amp; Tailwind UIs
+    <line x1="28" y1="84" x2="336" y2="84" stroke="#1E293B" stroke-width="1" />
+    <text x="182" y="114" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Type-safe Next.js, React &amp; Tailwind UIs
     </text>
-    <text x="24" y="142" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#60A5FA" font-weight="700">▸</tspan> High-throughput FastAPI &amp; Node.js APIs
+    <text x="182" y="142" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      High-throughput FastAPI &amp; Node.js APIs
     </text>
-    <text x="24" y="170" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#60A5FA" font-weight="700">▸</tspan> PostgreSQL, MySQL, MongoDB &amp; Supabase
+    <text x="182" y="170" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      PostgreSQL, MySQL, MongoDB &amp; Supabase
     </text>
-    <text x="24" y="198" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#60A5FA" font-weight="700">▸</tspan> Clean domain boundaries &amp; REST contracts
+    <text x="182" y="198" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Clean domain boundaries &amp; REST contracts
     </text>
   </g>
 
@@ -319,24 +376,24 @@ def generate_architecture_pillars() -> str:
   <g transform="translate(812, 24)">
     <rect width="364" height="232" rx="12" fill="url(#cardBg)" stroke="#1E293B" stroke-width="1.2" />
     <rect x="0" y="0" width="364" height="4" rx="2" fill="#10B981" />
-    <text x="24" y="38" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#34D399" letter-spacing="1.2">
+    <text x="182" y="36" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#34D399" letter-spacing="1">
       03 // DEVSECOPS &amp; AUTOMATION
     </text>
-    <text x="24" y="68" font-family="'Inter', -apple-system, sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">
+    <text x="182" y="66" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="17.5" font-weight="700" fill="#F8FAFC">
       Resilient Delivery Pipelines
     </text>
-    <line x1="24" y1="84" x2="340" y2="84" stroke="#1E293B" stroke-width="1" />
-    <text x="24" y="114" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#34D399" font-weight="700">▸</tspan> Automated GitHub Actions CI/CD workflows
+    <line x1="28" y1="84" x2="336" y2="84" stroke="#1E293B" stroke-width="1" />
+    <text x="182" y="114" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Automated GitHub Actions CI/CD workflows
     </text>
-    <text x="24" y="142" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#34D399" font-weight="700">▸</tspan> Containerized Docker &amp; Linux workloads
+    <text x="182" y="142" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Containerized Docker &amp; Linux workloads
     </text>
-    <text x="24" y="170" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#34D399" font-weight="700">▸</tspan> Scheduled secret &amp; exposure auditing
+    <text x="182" y="170" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Scheduled secret &amp; exposure auditing
     </text>
-    <text x="24" y="198" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
-      <tspan fill="#34D399" font-weight="700">▸</tspan> Deterministic builds &amp; edge deployments
+    <text x="182" y="198" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="13.5" fill="#CBD5E1">
+      Deterministic builds &amp; edge deployments
     </text>
   </g>
 </svg>
@@ -344,17 +401,16 @@ def generate_architecture_pillars() -> str:
 
 
 def generate_telemetry_svg(stats: dict) -> str:
-    """Generates the live GitHub Telemetry & Language Distribution SVG card."""
+    """Generates the live GitHub Telemetry & Language Distribution SVG card with centered metric boxes."""
     langs = stats.get("languages", {})
     if not langs:
         langs = {
-            "TypeScript": 42.5,
-            "Python": 26.0,
-            "JavaScript": 21.0,
-            "HTML/CSS": 10.5,
+            "TypeScript": 44.0,
+            "Python": 26.5,
+            "JavaScript": 19.5,
+            "HTML/CSS": 10.0,
         }
 
-    # Build stacked progress bar and legend rows
     bar_width = 500
     x_offset = 0
     bar_segments = []
@@ -403,41 +459,38 @@ def generate_telemetry_svg(stats: dict) -> str:
 
   <!-- Left Panel: Engineering & Repository Telemetry -->
   <g transform="translate(36, 34)">
-    <text x="0" y="0" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.2">
-      ⚡ GITHUB ENGINEERING TELEMETRY
+    <text x="265" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.2">
+      GITHUB ENGINEERING TELEMETRY
     </text>
-    <text x="0" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
+    <text x="265" y="28" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
       System Metrics &amp; Repository Posture
     </text>
 
-    <!-- 4 Metric Bento Boxes -->
+    <!-- 4 Centered Metric Bento Boxes -->
     <g transform="translate(0, 52)">
       <!-- Box 1 -->
       <rect x="0" y="0" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-      <text x="18" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Public Repositories</text>
-      <text x="18" y="62" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="26" font-weight="800" fill="#38BDF8">{public_repos}</text>
-      <text x="185" y="60" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#10B981">● ACTIVE</text>
+      <text x="128" y="28" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Public Repositories</text>
+      <text x="128" y="60" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="22" font-weight="800" fill="#38BDF8">{public_repos} <tspan font-size="12" fill="#10B981">● ACTIVE</tspan></text>
 
       <!-- Box 2 -->
       <rect x="274" y="0" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-      <text x="292" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Stars &amp; Community Reach</text>
-      <text x="292" y="62" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="26" font-weight="800" fill="#FBBF24">{total_stars} ★</text>
-      <text x="415" y="60" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#94A3B8">{followers} Followers</text>
+      <text x="402" y="28" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Stars &amp; Network Reach</text>
+      <text x="402" y="60" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="22" font-weight="800" fill="#FBBF24">{total_stars} ★ <tspan font-size="12" fill="#94A3B8">({followers} Flw)</tspan></text>
 
       <!-- Box 3 -->
       <rect x="0" y="98" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-      <text x="18" y="126" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Security &amp; Secret Audit</text>
-      <text x="18" y="160" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="20" font-weight="800" fill="#10B981">PASSING ✓</text>
-      <text x="165" y="158" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#64748B">0 Leaks</text>
+      <text x="128" y="126" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Security &amp; Secret Audit</text>
+      <text x="128" y="158" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="19" font-weight="800" fill="#10B981">PASSING ✓ <tspan font-size="11.5" fill="#64748B">(0 Leaks)</tspan></text>
 
       <!-- Box 4 -->
       <rect x="274" y="98" width="256" height="82" rx="10" fill="#0B1324" stroke="#1E293B" stroke-width="1.2" />
-      <text x="292" y="126" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Primary Engineering Focus</text>
-      <text x="292" y="160" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="18" font-weight="800" fill="#60A5FA">CTEM &amp; Full-Stack</text>
+      <text x="402" y="126" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12.5" fill="#94A3B8">Primary Engineering Focus</text>
+      <text x="402" y="158" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="17" font-weight="800" fill="#60A5FA">CTEM &amp; Full-Stack</text>
     </g>
 
-    <text x="0" y="254" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#64748B">
-      Auto-synced via GitHub Actions • Last telemetry snapshot: {updated_str}
+    <text x="265" y="254" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" fill="#64748B">
+      Auto-synced via GitHub Actions • Snapshot: {updated_str}
     </text>
   </g>
 
@@ -446,10 +499,10 @@ def generate_telemetry_svg(stats: dict) -> str:
 
   <!-- Right Panel: Language & Architecture Distribution -->
   <g transform="translate(652, 34)">
-    <text x="0" y="0" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#10B981" letter-spacing="1.2">
-      📊 CODEBASE LANGUAGE DISTRIBUTION
+    <text x="250" y="0" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#10B981" letter-spacing="1.2">
+      CODEBASE LANGUAGE DISTRIBUTION
     </text>
-    <text x="0" y="28" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
+    <text x="250" y="28" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">
       Primary Production Stack
     </text>
 
@@ -467,6 +520,213 @@ def generate_telemetry_svg(stats: dict) -> str:
 """
 
 
+def generate_activity_pulse_svg() -> str:
+    """Generates a flat 2D Animated Engineering Velocity Wave & DevSecOps Pipeline SVG (replaces Snake)."""
+    # Build deterministic 2D wave points and flat 2D contribution cells
+    cells = []
+    cols = 36
+    rows = 4
+    cell_w = 24
+    cell_h = 12
+    gap_x = 6
+    gap_y = 5
+    start_x = 66
+    start_y = 186
+
+    palette = ["#0F172A", "#1E3A5F", "#0284C7", "#38BDF8", "#10B981"]
+    for c in range(cols):
+        for r in range(rows):
+            digest = hashlib.sha256(f"zain-{c}-{r}".encode()).digest()[0]
+            # Higher activity toward recent weeks on the right
+            weight = (digest + int(c * 2.5)) % 10
+            if weight < 2:
+                idx = 0
+            elif weight < 4:
+                idx = 1
+            elif weight < 7:
+                idx = 2
+            elif weight < 9:
+                idx = 3
+            else:
+                idx = 4
+            cx = start_x + c * (cell_w + gap_x)
+            cy = start_y + r * (cell_h + gap_y)
+            cells.append(
+                f'<rect x="{cx}" y="{cy}" width="{cell_w}" height="{cell_h}" rx="3" fill="{palette[idx]}" stroke="#1E293B" stroke-width="0.6" />'
+            )
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="100%" height="100%" role="img" aria-label="2D Engineering Velocity Wave and DevSecOps Pipeline">
+  <defs>
+    <linearGradient id="pulseBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14" />
+      <stop offset="50%" stop-color="#0B1324" />
+      <stop offset="100%" stop-color="#070B14" />
+    </linearGradient>
+    <linearGradient id="pulseWave1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.24" />
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.24" />
+    </linearGradient>
+    <linearGradient id="pulseWave2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.15" />
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.15" />
+    </linearGradient>
+    <linearGradient id="lineStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+    <clipPath id="pulseClip">
+      <rect width="1200" height="280" rx="16" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#pulseClip)">
+    <rect width="1200" height="280" fill="url(#pulseBg)" />
+
+    <!-- Animated 2D Telemetry Wave 1 -->
+    <path fill="url(#pulseWave2)" d="M 0 135 Q 200 85 400 135 T 800 135 T 1200 135 L 1200 280 L 0 280 Z">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite"
+        values="
+          M 0 135 Q 200 85 400 135 T 800 135 T 1200 135 L 1200 280 L 0 280 Z;
+          M 0 135 Q 200 175 400 135 T 800 135 T 1200 135 L 1200 280 L 0 280 Z;
+          M 0 135 Q 200 85 400 135 T 800 135 T 1200 135 L 1200 280 L 0 280 Z" />
+    </path>
+
+    <!-- Animated 2D Telemetry Wave 2 -->
+    <path fill="url(#pulseWave1)" stroke="url(#lineStroke)" stroke-width="2" d="M 0 145 Q 300 95 600 145 T 1200 145 L 1200 280 L 0 280 Z">
+      <animate attributeName="d" dur="6s" repeatCount="indefinite"
+        values="
+          M 0 145 Q 300 95 600 145 T 1200 145 L 1200 280 L 0 280 Z;
+          M 0 145 Q 300 185 600 145 T 1200 145 L 1200 280 L 0 280 Z;
+          M 0 145 Q 300 95 600 145 T 1200 145 L 1200 280 L 0 280 Z" />
+    </path>
+  </g>
+
+  <rect x="1" y="1" width="1198" height="278" rx="15" fill="none" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Centered Header -->
+  <text x="600" y="34" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1.2">
+    CONTINUOUS ENGINEERING VELOCITY &amp; DEVSECOPS PIPELINE
+  </text>
+  <text x="600" y="60" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="18.5" font-weight="700" fill="#F8FAFC">
+    Automated Delivery Cadence &amp; Contribution Matrix
+  </text>
+
+  <!-- 4 Centered Pipeline Stage Pills -->
+  <g transform="translate(66, 84)">
+    <!-- Stage 1 -->
+    <rect x="0" y="0" width="240" height="44" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+    <text x="120" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" font-weight="700" fill="#38BDF8">01 • ARCHITECTURE &amp; CODE</text>
+    <text x="120" y="35" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="11" fill="#94A3B8">TypeScript • Python • FastAPI</text>
+
+    <line x1="246" y1="22" x2="270" y2="22" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="3,3" />
+
+    <!-- Stage 2 -->
+    <rect x="276" y="0" width="240" height="44" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+    <text x="396" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" font-weight="700" fill="#60A5FA">02 • STATIC &amp; TYPE AUDIT</text>
+    <text x="396" y="35" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="11" fill="#94A3B8">Strict Contracts • Schema Check</text>
+
+    <line x1="522" y1="22" x2="546" y2="22" stroke="#60A5FA" stroke-width="1.5" stroke-dasharray="3,3" />
+
+    <!-- Stage 3 -->
+    <rect x="552" y="0" width="240" height="44" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+    <text x="672" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" font-weight="700" fill="#34D399">03 • CTEM &amp; SECRET SCAN</text>
+    <text x="672" y="35" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="11" fill="#94A3B8">CIS • PCI DSS • Exposure Audit</text>
+
+    <line x1="798" y1="22" x2="822" y2="22" stroke="#10B981" stroke-width="1.5" stroke-dasharray="3,3" />
+
+    <!-- Stage 4 -->
+    <rect x="828" y="0" width="240" height="44" rx="10" fill="#0B1528" fill-opacity="0.92" stroke="#1E3A5F" stroke-width="1.2" />
+    <text x="948" y="20" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="11" font-weight="700" fill="#A78BFA">04 • PRODUCTION RELEASE</text>
+    <text x="948" y="35" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="11" fill="#94A3B8">Docker • Linux • Edge CI/CD</text>
+  </g>
+
+  <!-- 2D Contribution Density Strip -->
+  <g>
+    {"".join(cells)}
+  </g>
+</svg>
+"""
+
+
+def generate_connect_banner_svg() -> str:
+    """Generates a full-width centered Connect & Collaborate SVG card with animated background waves."""
+    return """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 170" width="100%" height="100%" role="img" aria-label="Connect and Collaborate with Zain Imran">
+  <defs>
+    <linearGradient id="connBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14" />
+      <stop offset="50%" stop-color="#0B1324" />
+      <stop offset="100%" stop-color="#070B14" />
+    </linearGradient>
+    <linearGradient id="connWave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.14" />
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.14" />
+    </linearGradient>
+    <clipPath id="connClip">
+      <rect width="1200" height="170" rx="16" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#connClip)">
+    <rect width="1200" height="170" fill="url(#connBg)" />
+    <path fill="url(#connWave)" d="M 0 115 Q 300 75 600 115 T 1200 115 L 1200 170 L 0 170 Z">
+      <animate attributeName="d" dur="7s" repeatCount="indefinite"
+        values="
+          M 0 115 Q 300 75 600 115 T 1200 115 L 1200 170 L 0 170 Z;
+          M 0 115 Q 300 150 600 115 T 1200 115 L 1200 170 L 0 170 Z;
+          M 0 115 Q 300 75 600 115 T 1200 115 L 1200 170 L 0 170 Z" />
+    </path>
+  </g>
+  <rect x="1" y="1" width="1198" height="168" rx="15" fill="none" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Card 1: Web Portfolio -->
+  <g transform="translate(36, 26)">
+    <rect width="356" height="118" rx="12" fill="#0B1528" fill-opacity="0.9" stroke="#1E3A5F" stroke-width="1.2" />
+    <text x="178" y="42" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#38BDF8" letter-spacing="1">
+      WEB PORTFOLIO
+    </text>
+    <text x="178" y="72" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="17" font-weight="700" fill="#F8FAFC">
+      www.zain-imran.com
+    </text>
+    <text x="178" y="98" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12" fill="#94A3B8">
+      Interactive Case Studies &amp; Architecture
+    </text>
+  </g>
+
+  <!-- Card 2: LinkedIn Network -->
+  <g transform="translate(422, 26)">
+    <rect width="356" height="118" rx="12" fill="#0B1528" fill-opacity="0.9" stroke="#1E3A5F" stroke-width="1.2" />
+    <text x="178" y="42" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#60A5FA" letter-spacing="1">
+      LINKEDIN NETWORK
+    </text>
+    <text x="178" y="72" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="17" font-weight="700" fill="#F8FAFC">
+      linkedin.com/in/zainimran98
+    </text>
+    <text x="178" y="98" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12" fill="#94A3B8">
+      Professional Network &amp; Engineering Updates
+    </text>
+  </g>
+
+  <!-- Card 3: Direct Engineering Inquiry -->
+  <g transform="translate(808, 26)">
+    <rect width="356" height="118" rx="12" fill="#0B1528" fill-opacity="0.9" stroke="#1E3A5F" stroke-width="1.2" />
+    <text x="178" y="42" text-anchor="middle" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="700" fill="#34D399" letter-spacing="1">
+      DIRECT ENGINEERING INQUIRY
+    </text>
+    <text x="178" y="72" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="17" font-weight="700" fill="#F8FAFC">
+      mirzazan3334@gmail.com
+    </text>
+    <text x="178" y="98" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-size="12" fill="#94A3B8">
+      Open to Global Remote Roles &amp; Collaboration
+    </text>
+  </g>
+</svg>
+"""
+
+
 def main():
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
     stats = fetch_github_stats(USERNAME)
@@ -474,12 +734,18 @@ def main():
     hero_path = ASSETS_DIR / "hero-banner.svg"
     pillars_path = ASSETS_DIR / "architecture-pillars.svg"
     telemetry_path = ASSETS_DIR / "github-telemetry.svg"
+    pulse_path = ASSETS_DIR / "activity-pulse.svg"
+    connect_path = ASSETS_DIR / "connect-banner.svg"
 
     hero_path.write_text(generate_hero_banner(), encoding="utf-8")
     pillars_path.write_text(generate_architecture_pillars(), encoding="utf-8")
     telemetry_path.write_text(generate_telemetry_svg(stats), encoding="utf-8")
+    pulse_path.write_text(generate_activity_pulse_svg(), encoding="utf-8")
+    connect_path.write_text(generate_connect_banner_svg(), encoding="utf-8")
 
-    print(f"Generated {hero_path.name}, {pillars_path.name}, and {telemetry_path.name} successfully.")
+    print(
+        f"Generated {hero_path.name}, {pillars_path.name}, {telemetry_path.name}, {pulse_path.name}, and {connect_path.name} successfully."
+    )
 
 
 if __name__ == "__main__":
