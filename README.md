@@ -213,11 +213,11 @@
 <h2 align="center">💡 Weekly Engineering &amp; DevSecOps Insight</h2>
 
 <!-- WEEKLY-INSIGHT:START -->
-> **🧩 Resilient API Architecture**
+> **💡 Engineering Iteration**
 > 
-> *"Good APIs are intuitive to use and practically impossible to misuse. Design interfaces from consumer ergonomics backward to the database."*
+> *"The only way to move fast with high confidence is to build well. High velocity is a byproduct of high internal code quality."*
 > 
-> — **Joshua Bloch**
+> — **Robert C. Martin**
 <!-- WEEKLY-INSIGHT:END -->
 
 ---
