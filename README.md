@@ -213,11 +213,11 @@
 <h2 align="center">💡 Weekly Engineering &amp; DevSecOps Insight</h2>
 
 <!-- WEEKLY-INSIGHT:START -->
-> **💡 Engineering Iteration**
+> **🌐 Full-Stack Synergy**
 > 
-> *"The only way to move fast with high confidence is to build well. High velocity is a byproduct of high internal code quality."*
+> *"Delightful frontend experiences are enabled by predictable, type-safe, and low-latency backends. Great engineers bridge both worlds."*
 > 
-> — **Robert C. Martin**
+> — **Full-Stack Design Principle**
 <!-- WEEKLY-INSIGHT:END -->
 
 ---
